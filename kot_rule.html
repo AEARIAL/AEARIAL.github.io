@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Key Or Trapのルール</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</head>
+ 
+<body>
+  <main>
+  <h1>Key Or Trap ルール</h1>
+    <h2>目次</h2>
+    <nav>
+      <ul>
+          <li><a href="#roo">ルーム設定</a></li>
+          <li><a href="#gco">モード-コスト消費</a></li>
+          <li><a href="#git">モード-アイテム収集</a></li>
+          <li><a href="#eff">効果マス一覧</a></li>
+          <li><a href="#ite">アイテム一覧</a></li>
+          <li><a href="#enc">エンチャント一覧</a></li>
+      </ul>   
+    </nav>
+    <h2 id="roo">ルーム設定</h2>
+
+    <h2 >ゲームモード</h2>
+      <h3 id="gco">コスト消費</h3>
+      <h3 id="git">アイテム収集</h3>
+    <h2 id="eff">効果マス一覧</h2>
+      <div>
+        基本効果マス
+        <table>
+          <tr>
+            <th>名前</th>
+            <th>効果</th>
+            <th>コスト/レアリティ</th>
+            <th>再配置</th>
+          </tr>
+          <tr>
+            <th>Right1</th>
+            <th>右に1マス進む</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>Right2</th>
+            <th>右に2マス進む</th>
+            <th>2</th>
+            <th>3周</th>
+          </tr>
+          <tr>
+            <th>Right3</th>
+            <th>右に3マス進む</th>
+            <th>3</th>
+            <th>3.5周</th>
+          </tr>
+          <tr>
+            <th>Left1</th>
+            <th>左に1マス進む</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>Left2</th>
+            <th>左に2マス進む</th>
+            <th>2</th>
+            <th>3周</th>
+          </tr>
+          <tr>
+            <th>Left3</th>
+            <th>左に3マス進む</th>
+            <th>3</th>
+            <th>3.5周</th>
+          </tr>
+        </table>
+      </div>
+      <div>
+        基本戦術マス
+        <table>
+          <tr>
+            <th>名前</th>
+            <th>効果</th>
+            <th>コスト/レアリティ</th>
+            <th>再配置</th>
+          </tr>
+            <th>シールド</th>
+            <th>次の移動時、止まったマスの効果を無効化する</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>デストロイ</th>
+            <th>周囲1マスを破壊する(通常の再配置時間に入る)</th>
+            <th>2</th>
+            <th>3周</th>
+          </tr>
+          <tr>
+            <th>リーク</th>
+            <th>ビーコンレーダーを獲得する</th>
+            <th>3</th>
+            <th>3.5周</th>
+          </tr>
+          <tr>
+            <th>ブースト</th>
+            <th>次の移動が2マス追加される</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>キー</th>
+            <th>ランダムなKey系アイテムを獲得する</th>
+            <th>2</th>
+            <th>3周</th>
+          </tr>
+          <tr>
+            <th>バック</th>
+            <th>次の移動の進行方向が反転する</th>
+            <th>3</th>
+            <th>3.5周</th>
+          </tr>
+        </table>
+      </div>
+      <div>
+        アイテム解放系
+        <table>
+          <tr>
+            <th>名前</th>
+            <th>効果</th>
+            <th>解放アイテム</th>
+            <th>コスト/レアリティ</th>
+            <th>再配置</th>
+          </tr>
+            <th>アイテム</th>
+            <th>ランダムなアイテムを獲得する</th>
+            <th>ルーレット装置</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>トレーダー</th>
+            <th>トレードイベントが起こる</th>
+            <th>移動販売車</th>
+            <th>2</th>
+            <th>3周</th>
+          </tr>
+          <tr>
+            <th>ガード</th>
+            <th>周囲3マスにエンチャント:key無効化を展開/収束する(このマスを踏むと切り替わる)</th>
+            <th>解放アイテム</th>
+            <th>4</th>
+            <th>4周</th>
+          </tr>
+          <tr>
+            <th>リバイブ</th>
+            <th>周囲3マスの再配置時間が2周進む</th>
+            <th>解放アイテム</th>
+            <th>4</th>
+            <th>4周</th>
+          </tr>
+          <tr>
+            <th>イレース</th>
+            <th>周囲2マスの範囲にエンチャント:忘却を付与</th>
+            <th>解放アイテム</th>
+            <th>4</th>
+            <th>4周</th>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        特殊マス-設置者に関連する効果を持つ
+      <table>
+        <tr>
+          <th>名前</th>
+          <th>効果</th>
+          <th>コスト/レアリティ</th>
+          <th>再配置</th>
+        </tr>
+        <tr>
+          <th>ライトN</th>
+          <th>踏んだら右に1から5マス進む。効果初同時に設置者が選択。</th>
+          <th>5</th>
+          <th>4.5周</th>
+        </tr>
+        <tr>
+          <th>レフトN</th>
+          <th>踏んだら左に1から5マス進む。効果初同時に設置者が選択。</th>
+          <th>5</th>
+          <th>4.5周</th>
+        </tr>
+        <tr>
+          <th>ライト/レフトN</th>
+          <th>踏んだら左右に0から2マス進む。効果初同時に設置者が選択。</th>
+          <th>5</th>
+          <th>4.5周</th>
+        </tr>
+        <tr>
+          <th>スワップ</th>
+          <th>設置者と位置を入れ替える。</th>
+          <th>5</th>
+          <th>4.5周</th>
+        </tr>
+      </table>
+      </div>
+
+      <div>
+        その他のマス
+        <table>
+          <tr>
+            <th>名前</th>
+            <th>効果</th>
+            <th>コスト/レアリティ</th>
+            <th>再配置</th>
+          </tr>
+          <tr>
+            <th>ミステリー</th>
+            <th>ミステリーイベントがランダムで起こる</th>
+            <th>1</th>
+            <th>2.5周</th>
+          </tr>
+          <tr>
+            <th>通常マス</th>
+            <th>効果を配置できる</th>
+            <th>X</th>
+            <th>2周</th>
+          </tr>
+        </table>
+        
+      </div>
+
+    <h2 id="ite">アイテム一覧</h2>
+    <p>50種類ぐらいある</p>
+    <div>
+      ゴミ袋、サクサクポテチ、リンゴジュース、エナジードリンク、テキーラ、ウィスキー、リキュール、エンチャント送信回路
+    </div>
+    <h2 id="enc">エンチャント一覧</h2>
+    <p>効果マスを踏んだ際に発動する、副次的な効果</p>
+    <table>
+      <tr>
+        <th>エンチャント名</th>
+        <th>効果</th>
+      </tr>
+      <tr>
+        <th>強制停止</th>
+        <th>通過しようとしたプレイヤーは、このマスに強制的に停止する。このマスの効果が発動すると、消失する。(再配置されない)</th>
+      </tr>
+      <tr>
+        <th>短縮再配置</th>
+        <th>このマスの配置時間が短縮される</th>
+      </tr>
+      <tr>
+        <th>忘却</th>
+        <th>このマスの効果とエンチャントを消し、通常マスにする</th>
+      </tr>
+      <tr>
+        <th>key無効化</th>
+        <th>このマスに対する鍵の使用をを無効化する</th>
+      </tr>
+      <tr>
+        <th>x2</th>
+        <th>このマスの効果を2倍にする</th>
+      </tr>
+      <tr>
+        <th>ロスト </th>
+        <th>このマスの効果を受けたとき、ランダムなアイテムを1-4個失う</th>
+      </tr>
+    </table>
+  </main>
+  <footer>
+    <small>
+      <a href="index.html">ホームに戻る</a>
+    </small>
+  </footer>
+</body>
+
+
+</html>
