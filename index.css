@@ -14,6 +14,11 @@ th{
     background: #f4f4f4;
 }
 
+#box{
+    padding: 8px 8px 8px 28px;
+    background: #f4f4f4;
+}
+
 #fla{
 	color:rgb(155, 155, 155);
     font-size : 12px;
