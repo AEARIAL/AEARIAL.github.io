@@ -125,7 +125,7 @@
           </tr>
           <tr>
             <th>リーク</th>
-            <th>ビーコンレーダーを獲得する</th>
+            <th><a href="#item_leader">ビーコンレーダー</a>を獲得する</th>
             <th>3</th>
             <th>3.5周</th>
           </tr>
@@ -137,7 +137,7 @@
           </tr>
           <tr>
             <th>キー</th>
-            <th>ランダムなKey系アイテムを獲得する</th>
+            <th>ランダムな<a href="#item_key">Key系アイテム</a>を獲得する</th>
             <th>2</th>
             <th>3周</th>
           </tr>
@@ -159,41 +159,42 @@
             <th>コスト/レアリティ</th>
             <th>再配置</th>
           </tr>
+          <tr id="tile_Item">
             <th>アイテム</th>
             <th>ランダムなアイテムを獲得する</th>
             <th>ルーレット装置</th>
             <th>1</th>
             <th>2.5周</th>
           </tr>
-          <tr>
+          <tr id="tile_Trader">
             <th>トレーダー</th>
-            <th>トレードイベントが起こる</th>
+            <th><a href="#event_trade">トレードイベント</a>が起こる</th>
             <th>移動販売車</th>
             <th>2</th>
             <th>3周</th>
           </tr>
-          <tr>
+          <tr id="tile_Guard">
             <th>ガード</th>
-            <th>周囲3マスにエンチャント:key無効化を展開/収束する(このマスを踏むと切り替わる)</th>
+            <th>周囲3マスに<a href="#enc_3">エンチャント:key無効化</a>を展開/収束する(このマスを踏むと切り替わる)</th>
             <th>レジャーシート</th>
             <th>4</th>
             <th>4周</th>
           </tr>
-          <tr>
+          <tr id="tile_Revaival">
             <th>リバイブ</th>
             <th>周囲3マスの再配置時間が2周進む</th>
             <th>復活したバンドのCD</th>
             <th>4</th>
             <th>4周</th>
           </tr>
-          <tr>
+          <tr id="tile_Revaival">
             <th>イレース</th>
-            <th>周囲2マスの範囲にエンチャント:忘却を付与</th>
+            <th>周囲2マスの範囲に<a href="#enc_6">エンチャント:忘却</a>を付与</th>
             <th>高性能な高圧洗浄機</th>
             <th>4</th>
             <th>4周</th>
           </tr>
-          <tr>
+          <tr id="tile_Boost">
             <th>ブースト</th>
             <th>次の移動が2マス追加される</th>
             <th>ローラーシューズ</th>
@@ -250,7 +251,7 @@
           </tr>
           <tr>
             <th>ミステリー</th>
-            <th>ミステリーイベントがランダムで起こる</th>
+            <th><a href="#event_mystery">ミステリーイベント</a>がランダムで起こる</th>
             <th>1</th>
             <th>2.5周</th>
           </tr>
@@ -275,33 +276,152 @@
           <th>入手方法</th>
           <th>割り当て</th>
         </tr>
-        <tr>
-          <th><img src="game_image/item_0.png" title="item:スーツケース"></th>
-          <th>スーツケース</th>
-          <th>ゴールができるように、進行方向反転</th>
-          <th>折り返しマス</th>
-          <th>限定系/永続</th>
-        </tr>
+
         <tr>
           <th><img src="game_image/item_1.png" title="item:映画のチケット"></th>
           <th>映画のチケット</th>
-          <th>イベントで選ばれるアイテムを1/2/3/...回まで再抽選できる。(1枚消費)</th>
+          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムを1/2/3/...回まで再抽選できる。(1枚消費)</th>
           <th>Itemマス、通常取引(2、3段目)</th>
           <th>通常系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_2.png" title="item:手提げバック"></th>
-          <th>手提げバック</th>
-          <th>配布イベントで選ばれるアイテムの獲得上限を1/2/3/...追加する。(初期:2)</th>
-          <th>Itemマス、通常取引(2、3段目)</th>
+          <th><img src="game_image/item_5.png" title="item:金属製の盾"></th>
+          <th>金属製の盾</th>
+          <th><a href="#eve">トレードイベント</a>や<a href="#enc_5">エンチャント:ロスト</a>で優先的に消費される。</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/消費</th>
+        </tr>
+
+        <tr id="item_leader">
+          <th><img src="game_image/item_25.png" title="item:ビーコンレーダー"></th>
+          <th>ビーコンレーダー</th>
+          <th>自分の周囲1/2/3/...マス以内にある効果マスを公開する（自分の効果マスは対象外）</th>
+          <th>Leakマス、Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_27.png" title="item:領収書"></th>
+          <th>領収書</th>
+          <th><a href="#eve">トレードイベント</a>での通過確率が1/2/3/...%上昇する代わりに、試行回数が1回減少する</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_28.png" title="item:マイク"></th>
+          <th>マイク</th>
+          <th><a href="#eve">トレードイベント</a>での通過試行回数が1/2/3/...回上昇する代わりに、1/2/3/...回目までの確率が24%減少する</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_29.png" title="item:飛行機の搭乗券"></th>
+          <th>飛行機の搭乗券</th>
+          <th><a href="#eve">トレードイベント</a>で失敗をした際に10.0/19.0/27.1/...%の確率で支払ったアイテムを返却する代わりに、1回目に必ず失敗する</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_30.png" title="item:手帳"></th>
+          <th>手帳</th>
+          <th><a href="#eve">トレードイベント</a>での通過試行回数が3回上昇する代わりに、4回目までの通過確率が90.0/81.0/72.9/...%減少する</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+       
+        <tr>
+          <th><img src="game_image/item_32.png" title="item:ラッキーサングラス"></th>
+          <th>ラッキーサングラス</th>
+          <th>ランダムアイテムを貰える時、20/40/60/80/0/20/40/...%の確率で1つ追加。さらに確定で0/0/0/0/1/1/1/...個追加。</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_35.png" title="item:鍵鋳造キット"></th>
+          <th>鍵鋳造キット</th>
+          <th>次の移動時に、10.0/19.0/27.1/...%の確率でランダムで鍵がもらえる。</th>
+          <th>Keyマス、Itemマス、通常取引(2、3段目)</th>
+          <th>通常系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_12.png" title="item:メンバーズカード"></th>
+          <th>メンバーズカード</th>
+          <th><a href="#event_trade">トレードイベント</a>の裏取引を開放(1つ消費)</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_3.png" title="item:フルーツリキュール"></th>
           <th>フルーツリキュール</th>
-          <th>次★1を設置する際、その効果マスにエンチャント:短縮再配置を付与（1つ自動消費、優先度:高）</th>
+          <th>次★1を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（1つ自動消費、優先度:高）</th>
           <th>Itemマス、選択イベント</th>
           <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_31.png" title="item:ウィスキー"></th>
+          <th>ウィスキー</th>
+          <th>次★2を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（自動消費、優先度:高）</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_36.png" title="item:テキーラ"></th>
+          <th>テキーラ</th>
+          <th>次★3を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（1つ自動消費、優先度:高）</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_18.png" title="item:エナジードリンク"></th>
+          <th>エナジードリンク</th>
+          <th>次★1を設置する際、その効果マスに<a href="#enc_2">エンチャント:x2</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_19.png" title="item:サクサクポテチ"></th>
+          <th>サクサクポテチ</th>
+          <th>次★2を設置する際、その効果マスに<a href="#enc_1">エンチャント:強制停止</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_20.png" title="item:リンゴジュース"></th>
+          <th>リンゴジュース</th>
+          <th>次★4を設置する際、その効果マスに<a href="#enc_2">エンチャント:x2</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_37.png" title="item:エンチャント送信回路"></th>
+          <th>エンチャント送信回路</th>
+          <th>次の配置時にそのマスにエンチャントがない場合、10.0/19.0/27.1/...%の確率でランダムでエンチャントを付与。</th>
+          <th>Keyマス、Itemマス、通常取引(2、3段目)</th>
+          <th>配置系/永続</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_16.png" title="item:ごみ袋"></th>
+          <th>ごみ袋</th>
+          <th>次★3を配置時、その効果マスに<a href="#enc_5">エンチャント:ロスト</a>を付与。(1つ自動消費)</th>
+          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>配置系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_2.png" title="item:手提げバック"></th>
+          <th>手提げバック</th>
+          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得上限を1/2/3/...追加する。(初期:2)</th>
+          <th>Itemマス、通常取引(2、3段目)</th>
+          <th>限定系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_10.png" title="item:ブラックボックス"></th>
+          <th>ブラックボックス</th>
+          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得下限を1/2/3/...追加する。(初期:1、獲得上限は超えない)</th>
+          <th>Itemマス、通常取引(2、3段目)</th>
+          <th>限定系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_4.png" title="item:フェライトコアコイル"></th>
@@ -310,13 +430,7 @@
           <th>限定取引</th>
           <th>限定系/永続</th>
         </tr>
-        <tr>
-          <th><img src="game_image/item_5.png" title="item:金属製の盾"></th>
-          <th>金属製の盾</th>
-          <th>イベントやロストで優先的に消費される。</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
-          <th>通常系/消費</th>
-        </tr>
+
         <tr>
           <th><img src="game_image/item_6.png" title="item:電解コンデンサ"></th>
           <th>電解コンデンサ</th>
@@ -332,205 +446,104 @@
           <th>限定系/永続</th>
         </tr>
         <tr>
+          <th><img src="game_image/item_0.png" title="item:スーツケース"></th>
+          <th>スーツケース</th>
+          <th>ゴールができるように、進行方向反転</th>
+          <th>折り返しマス</th>
+          <th>限定系/永続</th>
+        </tr>
+        
+        <tr>
           <th><img src="game_image/item_8.png" title="item:移動販売車"></th>
           <th>移動販売車</th>
-          <th>効果マス：Traderを配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th><a href="#tile_Trader">効果マス：Trader</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
           <th>Itemマス、選択イベント、通常取引(1段目)</th>
           <th>追加マス系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_9.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_9.png" title="item:復活したバンドのCD"></th>
+          <th>復活したバンドのCD</th>
+          <th><a href="#tile_Revaival">効果マス：Revaival</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>追加マス系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_11.png" title="item:ルーレット装置"></th>
+          <th>ルーレット装置</th>
+          <th><a href="#tile_Item">効果マス：Item</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>追加マス系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_13.png" title="item:レジャーシート"></th>
+          <th>レジャーシート</th>
+          <th><a href="#tile_Guard">効果マス：Guard</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>追加マス系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_10.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_14.png" title="item:高性能な高圧洗浄機"></th>
+          <th>高性能な高圧洗浄機</th>
+          <th><a href="#tile_Erase">効果マス：Erase</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>追加マス系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_11.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_15.png" title="item:ローラーシューズ"></th>
+          <th>ローラーシューズ</th>
+          <th><a href="#tile_Boost">効果マス：Boost</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>追加マス系/消費</th>
+        </tr>
+        
+        <tr>
+          <th><img src="game_image/item_17.png" title="item:影響中：逆転"></th>
+          <th>影響中：逆転</th>
+          <th>ダイスや鍵の移動時、進行方向に影響を与える。奇数個で逆方向、偶数個で順方向。（次の移動で全消費）</th>
+          <th>Backマス、'反転'の鍵、'異変'の鍵</th>
+          <th>影響系</th>
+        </tr>
+        
+        <tr>
+          <th><img src="game_image/item_21.png" title="item:影響中：key使用禁止"></th>
+          <th>影響中：key使用禁止</th>
+          <th>鍵の使用を禁止する。個数は、持続ターン数を示す。</th>
+          <th>エンチャント:key無効化</th>
+          <th>影響系</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_12.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_22.png" title="item:影響中：推進"></th>
+          <th>影響中：推進</th>
+          <th>次の移動が2マス増加。個数は、持続ターン数を示す。</th>
+          <th>Backマス、'反転'の鍵、'異変'の鍵</th>
+          <th>影響系</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_13.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_23.png" title="item:影響中：抑制"></th>
+          <th>影響中：抑制</th>
+          <th>次の移動が2マス減少。個数は、持続ターン数を示す。</th>
+          <th>--未実装--</th>
+          <th>影響系</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_14.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_24.png" title="item:影響中：効果無効"></th>
+          <th>影響中：効果無効</th>
+          <th>次の移動で、マスの効果とエンチャントの影響を受けない。個数は、持続ターン数を示す</th>
+          <th>Shieldマス</th>
+          <th>影響系</th>
         </tr>
+        
         <tr>
-          <th><img src="game_image/item_15.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_26.png" title="item:影響中：帰還"></th>
+          <th>影響中：帰還</th>
+          <th>次の移動が終了したとき、移動前の位置に戻る。個数は、持続ターン数を示す。</th>
+          <th>--未実装--</th>
+          <th>影響系</th>
         </tr>
-        <tr>
-          <th><img src="game_image/item_16.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_17.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_18.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_19.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_20.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_21.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_22.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_23.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_24.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_25.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_26.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_27.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_28.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_29.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_30.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_31.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_32.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
-        </tr>
-        <tr>
+
+        <tr id="item_key">
           <th><img src="game_image/item_33.png" title="item: 0 の鍵"></th>
           <th> 0 の鍵</th>
           <th>ダイスを振らず、0を宣言でき、移動しない。（1つ消費)</th>
@@ -587,69 +600,84 @@
           <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_35.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_33.png" title="item: 公開 の鍵"></th>
+          <th> 公開 の鍵</th>
+          <th>指定したマスを全員に公開する(1つ消費)</th>
+          <th>--未実装--</th>
+          <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_36.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_33.png" title="item: 抑制 の鍵"></th>
+          <th> 抑制 の鍵</th>
+          <th>次の移動が2マス減少する(1つ消費)</th>
+          <th>--未実装--</th>
+          <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_37.png" title="item:"></th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-          <th>フレーバー</th>
+          <th><img src="game_image/item_33.png" title="item: 帰還 の鍵"></th>
+          <th> 帰還 の鍵</th>
+          <th>次の移動が終了したとき、移動前の位置に戻る(1つ消費)</th>
+          <th>--未実装--</th>
+          <th>鍵系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_33.png" title="item: 使用禁止 の鍵"></th>
+          <th> 使用禁止 の鍵</th>
+          <th>次の移動が終了したとき、移動前の位置に戻る(1つ消費)</th>
+          <th>--未実装--</th>
+          <th>鍵系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_33.png" title="item: 無効 の鍵"></th>
+          <th> 無効 の鍵</th>
+          <th>鍵の使用を禁止する(1つ消費)</th>
+          <th>--未実装--</th>
+          <th>鍵系/消費</th>
         </tr>
       </table>
     </div>
     <h2 id="enc">エンチャント一覧</h2>
-    <p>効果マスを踏んだ際に発動する、副次的な効果</p>
+    <p>効果マスに対する、副次的な効果</p>
     <table>
       <tr>
         <th>エンチャント名</th>
         <th>効果</th>
       </tr>
-      <tr>
+      <tr id="enc_4">
         <th>強制停止</th>
-        <th>通過しようとしたプレイヤーは、このマスに強制的に停止する。このマスの効果が発動すると、消失する。(再配置されない)</th>
+        <th>通過しようとしたプレイヤーは、このマスに強制的に停止する<br>このマスの効果が発動すると、マスが消失する(再配置されない)</th>
       </tr>
-      <tr>
+      <tr id="enc_1">
         <th>短縮再配置</th>
-        <th>このマスの配置時間が短縮される</th>
+        <th>このマスの配置時間が半分に短縮される</th>
       </tr>
-      <tr>
+      <tr id="enc_6">
         <th>忘却</th>
         <th>このマスの効果とエンチャントを消し、通常マスにする</th>
       </tr>
-      <tr>
+      <tr id="enc_3">
         <th>key無効化</th>
         <th>このマスに対する鍵の使用をを無効化する</th>
       </tr>
-      <tr>
+      <tr id="enc_2">
         <th>x2</th>
-        <th>このマスの効果を2倍にする</th>
+        <th>このマスの効果を2倍にする(ただし、再配置時間も2倍になる)</th>
       </tr>
-      <tr>
+      <tr id="enc_5">
         <th>ロスト </th>
         <th>このマスの効果を受けたとき、ランダムなアイテムを1-4個失う</th>
       </tr>
     </table>
     <h2 id="eve">イベント一覧</h2>
     <p>選択イベント</p>
-
-    <p>トレードイベント</p>
-
-    <p>ミステリーイベント</p>
+    <ul>
+      <li>限定系アイテム以外のアイテムの中からランダムに2つのアイテムが選ばれる。個数もランダム(初期では最高2つ)。</li>
+    </ul>
+    <p id="event_trade">トレードイベント</p>
+    <ul>
+      <li>限定系アイテム以外のアイテムの中からランダムに2つが</li>
+    </ul>
+    <p id="event_mystery">ミステリーイベント</p>
     <ul>
       <li>「未知の物」</li>
         <p>イベント通過でブラックボックス獲得ができるイベント</p>
