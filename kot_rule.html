@@ -12,7 +12,7 @@
  
 <body>
   <main>
-  <h1>Key Or Trap ルール</h1>
+  <h1>Key Or Trap ルール(v16に更新途中)</h1>
     <h2>目次</h2>
     <nav>
       <ul>
@@ -22,6 +22,7 @@
           <li><a href="#eff">効果マス一覧</a></li>
           <li><a href="#ite">アイテム一覧</a></li>
           <li><a href="#enc">エンチャント一覧</a></li>
+          <li><a href="#">スキル一覧</a></li>
           <li><a href="#eve">イベント一覧</a></li>
           <li><a href="index.html">ホームに戻る</a></li>
       </ul>   
@@ -133,26 +134,32 @@
             <th>3.5周</th>
           </tr>
           <tr>
-            <th>キー</th>
-            <th>ランダムな<a href="#item_key">Key系アイテム</a>を獲得する</th>
-            <th>2</th>
-            <th>3周</th>
-          </tr>
-          <tr>
-            <th>バック</th>
-            <th>次の移動の進行方向が反転する</th>
+            <th>スタック</th>
+            <th>次の移動を2マス減少させる</th>
             <th>3</th>
             <th>3.5周</th>
           </tr>
           <tr>
+            <th>キー</th>
+            <th>ランダムな<a href="#item_key">Key系アイテム</a>を獲得する</th>
+            <th>4</th>
+            <th>4周</th>
+          </tr>
+          <tr>
+            <th>バック</th>
+            <th>次の移動の進行方向が反転する</th>
+            <th>4</th>
+            <th>4周</th>
+          </tr>
+          <tr>
             <th>ゲイン</th>
-            <th>KOTコインを2つ獲得する</th>
+            <th>KOTコインを3つ獲得する</th>
             <th>2</th>
             <th>3周</th>
           </tr>
           <tr>
             <th>ウェイスト</th>
-            <th>KOTコインを2つ失う</th>
+            <th>KOTコインを3つ失う</th>
             <th>1</th>
             <th>2.5周</th>
           </tr>
@@ -302,15 +309,15 @@
         <tr>
           <th><img src="game_image/item_1.png" title="item:映画のチケット"></th>
           <th>映画のチケット</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>で選ばれるアイテムを1/2/3/...回まで再抽選できる。(1枚消費)</th>
-          <th>Itemマス、通常取引(2、3段目)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>で選ばれるアイテムを1/2/3/...回まで再抽選できる(1枚消費)</th>
+          <th>Itemマス</th>
           <th>通常系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_5.png" title="item:金属製の盾"></th>
           <th>金属製の盾</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>や<a href="#enc_5">エンチャント:ロスト</a>で優先的に消費される。</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>エンチャント:ロスト</a>で優先的に消費される</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/消費</th>
         </tr>
 
@@ -318,35 +325,35 @@
           <th><img src="game_image/item_25.png" title="item:ビーコンレーダー"></th>
           <th>ビーコンレーダー</th>
           <th>自分の周囲1/2/3/...マス以内にある効果マスを公開する（自分の効果マスは対象外）</th>
-          <th>Leakマス、Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th>Leakマス、Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_27.png" title="item:領収書"></th>
           <th>領収書</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>での通過確率が5/10/15/...%上昇する代わりに、試行回数が1回減少する</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での通過確率が5/10/15/...%上昇する</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_28.png" title="item:マイク"></th>
           <th>マイク</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>での通過試行回数が1/2/3/...回上昇する代わりに、1/2/3/...回目までの確率が5%減少する</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での通過試行回数が1/2/3/...回上昇する</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_29.png" title="item:飛行機の搭乗券"></th>
           <th>飛行機の搭乗券</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>で失敗をした際に10.0/19.0/27.1/...%の確率で支払ったアイテムを返却する代わりに、1回目に必ず失敗する</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>で失敗をした際に10.0/19.0/27.1/...%の確率で支払ったアイテムを返却する</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_30.png" title="item:手帳"></th>
           <th>手帳</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>での失敗時増加確率が+10%上昇する代わりに、2回目までの通過確率が90.0/81.0/72.9/...%減少する</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での失敗時増加確率が+1/2/3...%上昇する</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
        
@@ -367,8 +374,8 @@
         <tr>
           <th><img src="game_image/item_12.png" title="item:メンバーズカード"></th>
           <th>メンバーズカード</th>
-          <th><a href="#event_trade">トレードイベント</a>の裏取引を開放(1つ消費)</th>
-          <th>Itemマス、選択イベント、通常取引(2、3段目)</th>
+          <th><a href="#event_trade">トレードイベント</a>で、割引された価格の鍵系アイテムの取引が2つ追加される確率が10.0/19.0/27.1/...%上昇する。</th>
+          <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
@@ -479,14 +486,14 @@
           <th><img src="game_image/item_8.png" title="item:移動販売車"></th>
           <th>移動販売車</th>
           <th><a href="#tile_Trader">効果マス：Trader</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_9.png" title="item:復活したバンドのCD"></th>
           <th>復活したバンドのCD</th>
           <th><a href="#tile_Revaival">効果マス：Revaival</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
 
@@ -494,7 +501,7 @@
           <th><img src="game_image/item_11.png" title="item:ルーレット装置"></th>
           <th>ルーレット装置</th>
           <th><a href="#tile_Item">効果マス：Item</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
 
@@ -502,22 +509,29 @@
           <th><img src="game_image/item_13.png" title="item:レジャーシート"></th>
           <th>レジャーシート</th>
           <th><a href="#tile_Guard">効果マス：Guard</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_14.png" title="item:高性能な高圧洗浄機"></th>
           <th>高性能な高圧洗浄機</th>
           <th><a href="#tile_Erase">効果マス：Erase</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_15.png" title="item:ローラーシューズ"></th>
           <th>ローラーシューズ</th>
           <th><a href="#tile_Boost">効果マス：Boost</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
-          <th>Itemマス、選択イベント、通常取引(1段目)</th>
+          <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_40.png" title="item:不吉な栞"></th>
+          <th>不吉な栞</th>
+          <th><a href="#tile_Hex">効果マス：Hex</a>を配置可能に この効果は全体に公開された状態で配置される（1つ自動消費）</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
+          <th>鍵系/消費</th>
         </tr>
         
         <tr>
@@ -568,106 +582,113 @@
         <tr id="item_key">
           <th><img src="game_image/item_33.png" title="item: 0 の鍵"></th>
           <th> 0 の鍵</th>
-          <th>ダイスを振らず、0を宣言でき、移動しない（1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:0の宣言を解放する。ダイスを振らず、0を宣言でき、移動しない（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 1 の鍵"></th>
           <th> 1 の鍵</th>
-          <th>ダイスを振らず、1を宣言できる（1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:1の宣言を解放する。ダイスを振らず、1を宣言できる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 2 の鍵"></th>
           <th> 2 の鍵</th>
-          <th>ダイスを振らず、2を宣言できる（1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:2の宣言を解放する。ダイスを振らず、2を宣言できる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 3 の鍵"></th>
           <th> 3 の鍵</th>
-          <th>ダイスを振らず、3を宣言できる（1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:3の宣言を解放する。ダイスを振らず、3を宣言できる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 復活 の鍵"></th>
           <th> 復活 の鍵</th>
-          <th>任意のマスを復活させる（1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:マス復活を解放する。任意のマスを復活させる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 消失 の鍵"></th>
           <th> 消失 の鍵</th>
-          <th>任意の効果マスを再配置されない状態で消失させる(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:マス消失を解放する。任意の効果マスを再配置されない状態で消失させる(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 反転 の鍵"></th>
           <th> 反転 の鍵</th>
-          <th>このターンの移動時、進行方向を反転させる(1つ消費)</th>
-          <th>Itemマス、Backマス(エンチャント:x2)、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:方向反転を解放する。異変このターンの移動時、進行方向を反転させる(1つ消費)</th>
+          <th>Itemマス、Backマス(エンチャント:x2)、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 異変 の鍵"></th>
           <th> 異変 の鍵</th>
-          <th>自分以外が次の移動時、進行方向を反転して進む(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:方向異変を解放する。自分以外が次の移動時、進行方向を反転して進む(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 公開 の鍵"></th>
           <th> 公開 の鍵</th>
-          <th>指定したマスを全員に公開する(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:マス公開を解放する。指定したマスを全員に公開する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 推進 の鍵"></th>
           <th> 推進 の鍵</th>
-          <th>次の移動が2マス増加する(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:推進力を解放する。 次の移動が2マス増加する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 抑制 の鍵"></th>
           <th> 抑制 の鍵</th>
-          <th>次の移動が2マス減少する(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:抑制力を解放する。 次の移動が2マス減少する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 帰還 の鍵"></th>
           <th> 帰還 の鍵</th>
-          <th>次の移動が終了したとき、移動前の位置に戻る(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:アクション＆アウェイを解放する。 次の移動が終了したとき、移動前の位置に戻る(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 禁止 の鍵"></th>
           <th> 禁止 の鍵</th>
-          <th>自分以外の鍵の使用を禁止する(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:ロックを解放する。 自分以外の鍵の使用を禁止する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 守護 の鍵"></th>
           <th> 守護 の鍵</th>
-          <th>この移動で、マスの効果とエンチャントの影響を受けない(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:保護シールドを解放する。 この移動で、マスの効果とエンチャントの影響を受けない(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 制御 の鍵"></th>
           <th> 制御 の鍵</th>
-          <th>自分以外の次の移動が2マス減少する(1つ消費)</th>
-          <th>Itemマス、鍵鋳造キット、通常取引(2、3段目)</th>
+          <th>スキル:全体制御を解放する。 自分以外の次の移動が2マス減少する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
+          <th>鍵系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_33.png" title="item: 浄化 の鍵"></th>
+          <th> 浄化 の鍵</th>
+          <th>スキル:クリアを解放する。 自分以外の次の移動が2マス減少する(1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
       </table>
@@ -681,7 +702,7 @@
       </tr>
       <tr id="enc_4">
         <th>強制停止</th>
-        <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの効果が発動すると、マスが消失する(再配置されない)</th>
+        <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの再配置時間は60ターン。</th>
       </tr>
       <tr id="enc_1">
         <th>短縮再配置</th>
@@ -754,26 +775,27 @@
       <p>※効果マス追加アイテムは、ルーレット装置、移動販売車、復活したバンドのCD、高性能な高圧洗浄機、レジャーシート、ローラーシューズ</p>
     </ul>
     <p id="event_mystery">ミステリーイベント</p>
+    <p>KOTコインを1枚ずつ捧げてランダムなイベントを成功させるとアイテムがもらえる。</p>
     <ul>
       <li>「未知の物」</li>
-        <p>通過確率:30%</p>
-        <p>失敗時増加確率:5%</p>
-        <p>試行可能回数:5</p>
+        <p>成功確率:12%</p>
+        <p>失敗時増加確率:2%</p>
+        <p>試行可能回数:8</p>
         <p>イベント通過でブラックボックス獲得ができるイベント</p>
       <li>「増量キャンペーン」</li>
-        <p>通過確率:20%</p>
-        <p>失敗時増加確率:20%</p>
-        <p>試行可能回数:3</p>
+        <p>成功確率:10%</p>
+        <p>失敗時増加確率:5%</p>
+        <p>試行可能回数:6</p>
         <p>イベント通過で手提バックが獲得ができるイベント</p>
       <li>「勝利の鍵」</li>
-        <p>通過確率:50%</p>
-        <p>失敗時増加確率:0%</p>
-        <p>試行可能回数:4</p>
+        <p>成功確率:5%</p>
+        <p>失敗時増加確率:8%</p>
+        <p>試行可能回数:6</p>
         <p>イベント通過で鍵鋳造キットが獲得ができるイベント</p>
       <li>「お金持ち気分」</li>
-        <p>通過確率:60%</p>
-        <p>失敗時増加確率:2%</p>
-        <p>試行可能回数:5</p>
+        <p>成功確率:2%</p>
+        <p>失敗時増加確率:10%</p>
+        <p>試行可能回数:8</p>
         <p>イベント通過でラッキーサングラスが獲得ができるイベント</p>
     </ul>
   </main>
