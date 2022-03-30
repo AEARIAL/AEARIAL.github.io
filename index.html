@@ -18,11 +18,63 @@
       <li>Key Or Trap</li>
         <p>マスの効果を自由に配置することができるマルチプレイすごろくゲーム</p>
         <p>2D/マルチプレイ/ボードゲーム</p>
-        <p><a href="KOTBCC/index.html">KeyOrTrapをプレイ(v19)</a> - <a href="kot_rule.html">ルール</a></p>
+        <p><a href="KOTBCC/index.html">KeyOrTrapをプレイ(v20)</a> - <a href="kot_rule.html">ルール</a></p>
         <br>
           <div id="out_box">
           <h3>修正項目</h3>
           <div id="h3_box">
+            <h4>v20:解読機&スキル調整</h4>
+            <h4 id="enc">エンチャント一覧</h4>
+            <p>効果マスに対する副次的な効果で、このマスに効果があるときにのみ効果がある。</p>
+
+            <table>
+              <tr id="enc_4">
+                <th>強制停止</th>
+                <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの再配置時間は<font color=#AA00AA>(変更)</font>5周。</th>
+              </tr>
+            </table>
+
+            <h4>アイテム</h4>
+            <div id="h4_box">
+            <p>解放アイテム</p>
+            <table>
+              <p><font color=#0000CC>(-削除)</font></p>
+              <tr>
+                <th><img src="game_image/item_33.png" title="item: 反転 の鍵"></th>
+                <th> 反転 の鍵</th>
+                <th>スキル:方向反転を解放する。異変このターンの移動時、進行方向を反転させる(1つ消費)</th>
+              </tr>
+              
+              <tr>
+                <th><img src="game_image/item_33.png" title="item: 抑制 の鍵"></th>
+                <th> 抑制 の鍵</th>
+                <th>スキル:抑制力を解放する。 次の移動が2マス減少する(1つ消費)</th>
+              </tr>
+            </table>
+            <p><font color=#CC0000>(+追加)</font></p>
+            <table>
+              <tr>
+                <th><img src="game_image/item_33.png" title="item: 放電 の鍵"></th>
+                <th> 放電 の鍵</th>
+                <th>スキル:放電を解放する。指定マスのエンチャントを消す。 </th>
+                <th>Itemマス、鍵鋳造キット、Traderマス</th>
+              </tr>
+              
+              <tr>
+                <th><img src="game_image/item_33.png" title="item: 経過 の鍵"></th>
+                <th> 経過 の鍵</th>
+                <th>スキル:時間経過を解放する。 全てのマスの再配置時間が3周進む。</th>
+                <th>Itemマス、鍵鋳造キット、Traderマス</th>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <th><img src="game_image/item_33.png" title="item: 宣言 の鍵"></th>
+                <th> 宣言 の鍵</th>
+                <th>スキル:123の宣言を解放する。</th>
+              </tr>
+            </table>
+
             <h4>v19:アドオンアイテム改善&基本移動がダイスから1～3マスの確定移動へ</h4>
             <h4>効果マス</h4>
               <div id="h4_box">
@@ -124,7 +176,7 @@
                 <tr>
                   <th><img src="game_image/item_33.png" title="item: ダイス の鍵"></th>
                   <th> ダイス の鍵</th>
-                  <th>スキル:ダイスを解放する。ダイスを降って進む</th>
+                  <th>スキル:ダイスを解放する。ダイスを降って進む。</th>
                 </tr>
               </table>
             </div>
