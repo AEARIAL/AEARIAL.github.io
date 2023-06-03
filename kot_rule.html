@@ -12,7 +12,7 @@
  
 <body>
   <main>
-  <h1>Key Or Trap ルール</h1>
+  <h1>Key Or Trap ルール(v16に更新途中)</h1>
     <h2>目次</h2>
     <nav>
       <ul>
@@ -37,20 +37,9 @@
           <p>マップの右端をゴールにするか、そこで折り返し左端をゴールとするかどうかを選択できる。</p>
         <li>エンチャント</li>
           <p>初期にランダムでマスにエンチャントを行うかどうかを選択できる。</p>
-        <li>ダイス</li>
-          <p>ダイス移動が選択可能かどうかを選択できる。</p>
       </ul>
     <h2>ゲームモード</h2>
-      <h3 id="git">真っ向勝負 - 効果配置と移動を同時に行うすごろく</h3>
-      <div id="box">
-        <p>いくつかのイベントや効果マスでアイテムを収集しながらゴールを目指す。</p>
-        <p>1ターンで選択イベント、配置、移動を行う。</p>
-        <p>特殊マスは1つしか配置出来ない。</p>
-        <p>決まったターン数まで配置は可能で、それ以降は配置できない。</p>
-        <p>KOTコイン2個がターン開始時に配布される</p>
-        <p>ゴールに先にたどり着けば勝ち。</p>
-      </div>
-      <h3 id="gco">準備万端 - マップを完成させてから移動を行うすごろく</h3>
+      <h3 id="gco">準備万端</h3>
       <div id="box">
         <p>配置と移動のフェーズが分かれており、コストを消費してマスを設置したあとに移動を開始する。</p>
         <p>特殊マスは1つしか配置出来ない。</p>
@@ -58,6 +47,16 @@
         <p>全プレイヤーが鍵のアイテム購入を終了すると、移動のフェーズに移る。</p>
         <p>移動のフェーズでは、ダイスかスキルの使用ができる。</p>
         <p>配置フェーズの順番とは逆で、移動のフェーズは行動する。</p>
+        <p>ゴールに先にたどり着けば勝ち。</p>
+        <p>（初期アイテムとして、0～3の鍵がそれぞれ1つ配布される）</p>
+      </div>
+      <h3 id="git">真っ向勝負</h3>
+      <div id="box">
+        <p>いくつかのイベントや効果マスでアイテムを収集しながらゴールを目指す。</p>
+        <p>1ターンで選択イベント、配置、移動を行う。</p>
+        <p>特殊マスは1つしか配置出来ない。</p>
+        <p>決まったターン数まで配置は可能で、それ以降は配置できない。</p>
+        <p>KOTコイン2個がターン開始時に配布される</p>
         <p>ゴールに先にたどり着けば勝ち。</p>
       </div>
     <h2 id="eff">効果マス一覧</h2>
@@ -148,7 +147,7 @@
           </tr>
           <tr>
             <th>バック</th>
-            <th>このターンの開始地点に戻る</th>
+            <th>次の移動の進行方向が反転する</th>
             <th>4</th>
             <th>4周</th>
           </tr>
@@ -263,7 +262,7 @@
         </tr>
         <tr>
           <th>ドレイン</th>
-          <th>設置者に6コスト譲渡する。</th>
+          <th>設置者に5コスト譲渡する。</th>
           <th>5</th>
           <th>4.5周</th>
         </tr>
@@ -298,7 +297,6 @@
     <h2 id="ite">アイテム一覧</h2>
     <p>60種類ぐらいある</p>
     <div>
-      <p>ノーマルアイテム</p>
       <table>
         <tr>
           <th>画像</th>
@@ -333,32 +331,46 @@
         <tr>
           <th><img src="game_image/item_27.png" title="item:領収書"></th>
           <th>領収書</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>の通過イベントで、成功確率が5/10/15/...%上昇する</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での通過確率が5/10/15/...%上昇する</th>
           <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_28.png" title="item:マイク"></th>
           <th>マイク</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>で、選択できる選択肢と通過イベントの試行回数が1/2/3/...回上昇する</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での通過試行回数が1/2/3/...回上昇する</th>
           <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_29.png" title="item:飛行機の搭乗券"></th>
           <th>飛行機の搭乗券</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>の通過イベントで、失敗時に10.0/19.0/27.1/...%の確率で支払ったアイテムを返却する</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>で失敗をした際に10.0/19.0/27.1/...%の確率で支払ったアイテムを返却する</th>
           <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
         <tr>
           <th><img src="game_image/item_30.png" title="item:手帳"></th>
           <th>手帳</th>
-          <th><a href="#event_mystery">ミステリーイベント</a>の通過イベントで、失敗時に増加するボーナス確率が+1/2/3...%上昇する</th>
+          <th><a href="#event_mystery">ミステリーイベント</a>での失敗時増加確率が+1/2/3...%上昇する</th>
           <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
        
+        <tr>
+          <th><img src="game_image/item_32.png" title="item:ラッキーサングラス"></th>
+          <th>ラッキーサングラス</th>
+          <th>Itemマスでもらえるアイテムを1/2/3...個追加。</th>
+          <th><a href="#event_mystery">ミステリーイベント</a></th>
+          <th>限定系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_35.png" title="item:鍵鋳造キット"></th>
+          <th>鍵鋳造キット</th>
+          <th>次の移動時に、10.0/19.0/27.1/...%の確率でランダムで鍵がもらえる。</th>
+          <th><a href="#event_mystery">ミステリーイベント</a></th>
+          <th>限定系/永続</th>
+        </tr>
         <tr>
           <th><img src="game_image/item_12.png" title="item:メンバーズカード"></th>
           <th>メンバーズカード</th>
@@ -366,7 +378,80 @@
           <th>Itemマス、選択イベント</th>
           <th>通常系/永続</th>
         </tr>
+        <tr>
+          <th><img src="game_image/item_3.png" title="item:フルーツリキュール"></th>
+          <th>フルーツリキュール</th>
+          <th>次★1を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（1つ自動消費、優先度:高）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_31.png" title="item:ウィスキー"></th>
+          <th>ウィスキー</th>
+          <th>次★2を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（自動消費、優先度:高）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_36.png" title="item:テキーラ"></th>
+          <th>テキーラ</th>
+          <th>次★3を設置する際、その効果マスに<a href="#enc_1">エンチャント:短縮再配置</a>を付与（1つ自動消費、優先度:高）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
 
+        <tr>
+          <th><img src="game_image/item_18.png" title="item:エナジードリンク"></th>
+          <th>エナジードリンク</th>
+          <th>次★1を設置する際、その効果マスに<a href="#enc_2">エンチャント:x2</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_19.png" title="item:サクサクポテチ"></th>
+          <th>サクサクポテチ</th>
+          <th>次★2を設置する際、その効果マスに<a href="#enc_1">エンチャント:強制停止</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_20.png" title="item:リンゴジュース"></th>
+          <th>リンゴジュース</th>
+          <th>次★4を設置する際、その効果マスに<a href="#enc_2">エンチャント:x2</a>を付与（1つ自動消費）</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_37.png" title="item:エンチャント送信回路"></th>
+          <th>エンチャント送信回路</th>
+          <th>次の配置時にそのマスにエンチャントがない場合、10.0/19.0/27.1/...%の確率でランダムでエンチャントを付与。</th>
+          <th>Keyマス、Itemマス</th>
+          <th>配置系/永続</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_16.png" title="item:ごみ袋"></th>
+          <th>ごみ袋</th>
+          <th>次★3を配置時、その効果マスに<a href="#enc_5">エンチャント:ロスト</a>を付与。(1つ自動消費)</th>
+          <th>Itemマス、選択イベント</th>
+          <th>配置系/消費</th>
+        </tr>
+
+        <tr>
+          <th><img src="game_image/item_2.png" title="item:手提げバック"></th>
+          <th>手提げバック</th>
+          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得上限を1/2/3/...追加する。(初期:2)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a></th>
+          <th>限定系/永続</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_10.png" title="item:ブラックボックス"></th>
+          <th>ブラックボックス</th>
+          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得下限を1/2/3/...追加する。(初期:1、獲得上限は超えない)</th>
+          <th><a href="#event_mystery">ミステリーイベント</a></th>
+          <th>限定系/永続</th>
+        </tr>
         <tr>
           <th><img src="game_image/item_4.png" title="item:フェライトコアコイル"></th>
           <th>フェライトコアコイル</th>
@@ -382,39 +467,13 @@
           <th>限定取引</th>
           <th>限定系/永続</th>
         </tr>
-
         <tr>
-          <th><img src="game_image/item_32.png" title="item:ラッキーサングラス"></th>
-          <th>ラッキーサングラス</th>
-          <th>Itemマスでもらえるアイテムを1/2/3...個追加。</th>
-          <th><a href="#event_mystery">ミステリーイベント</a></th>
+          <th><img src="game_image/item_7.png" title="item:1kΩの抵抗器"></th>
+          <th>1kΩの抵抗器</th>
+          <th>配置した効果マスが消失したとき、再配置時間が1/2/3/...周追加される。</th>
+          <th>限定取引</th>
           <th>限定系/永続</th>
         </tr>
-
-        <tr>
-          <th><img src="game_image/item_35.png" title="item:鍵鋳造キット"></th>
-          <th>鍵鋳造キット</th>
-          <th>次の移動時に、10.0/19.0/27.1/...%の確率でランダムで鍵がもらえる。</th>
-          <th><a href="#event_mystery">ミステリーイベント</a></th>
-          <th>限定系/永続</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_2.png" title="item:手提げバック"></th>
-          <th>手提げバック</th>
-          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得上限を1/2/3/...追加する。(初期:2)</th>
-          <th><a href="#event_mystery">ミステリーイベント</a></th>
-          <th>限定系/永続</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_10.png" title="item:ブラックボックス"></th>
-          <th>ブラックボックス</th>
-          <th><a href="#eve">トレードイベント</a>で選ばれるアイテムの獲得下限を1/2/3/...追加する。(初期:1、獲得上限は超えない)</th>
-          <th><a href="#event_mystery">ミステリーイベント</a></th>
-          <th>限定系/永続</th>
-        </tr>
-
         <tr>
           <th><img src="game_image/item_0.png" title="item:スーツケース"></th>
           <th>スーツケース</th>
@@ -422,97 +481,7 @@
           <th>折り返しマス</th>
           <th>限定系/永続</th>
         </tr>
-
-      </table>
-      <p>アドオンアイテム</p>
-      <table>
-        <tr>
-          <th>画像</th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_3.png" title="item:フルーツリキュール"></th>
-          <th>フルーツリキュール</th>
-          <th>配置する際に<a href="#enc_1">エンチャント:短縮再配置</a>を付与（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_31.png" title="item:ウィスキー"></th>
-          <th>ウィスキー</th>
-          <th>配置する際に<a href="#enc_1">エンチャント:スキル無効化</a>を付与（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_36.png" title="item:テキーラ"></th>
-          <th>テキーラ</th>
-          <th>配置する際に<a href="#enc_1">エンチャント:忘却</a>を付与（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_18.png" title="item:エナジードリンク"></th>
-          <th>エナジードリンク</th>
-          <th>配置する際に<a href="#enc_2">エンチャント:x2</a>を付与（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-        <tr>
-          <th><img src="game_image/item_19.png" title="item:サクサクポテチ"></th>
-          <th>サクサクポテチ</th>
-          <th>配置する際に<a href="#enc_1">エンチャント:強制停止</a>を付与（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_16.png" title="item:ごみ袋"></th>
-          <th>ごみ袋</th>
-          <th>配置する際に<a href="#enc_5">エンチャント:ロスト</a>を付与。(1つ消費)</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_20.png" title="item:リンゴジュース"></th>
-          <th>リンゴジュース</th>
-          <th>配置する際に消費するKOTコインを0にする（1つ消費）</th>
-          <th>Itemマス、選択イベント</th>
-          <th>配置系/消費</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_37.png" title="item:エンチャント送信回路"></th>
-          <th>エンチャント送信回路</th>
-          <th>配置する際に任意のエンチャントを付与する（1つ消費）</th>
-          <th>Keyマス、Itemマス</th>
-          <th>配置系/永続</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_7.png" title="item:1kΩの抵抗器"></th>
-          <th>1kΩの抵抗器</th>
-          <th>消失した状態で配置を行い、ターン終了時に復活させる（1つ消費）</th>
-          <th>限定取引</th>
-          <th>限定系/消費</th>
-        </tr>
-      </table>
-      <p>追加効果アイテム</p>
-      <table>
-        <tr>
-          <th>画像</th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-        </tr>
+        
         <tr>
           <th><img src="game_image/item_8.png" title="item:移動販売車"></th>
           <th>移動販売車</th>
@@ -520,7 +489,6 @@
           <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
-
         <tr>
           <th><img src="game_image/item_9.png" title="item:復活したバンドのCD"></th>
           <th>復活したバンドのCD</th>
@@ -544,7 +512,6 @@
           <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
-
         <tr>
           <th><img src="game_image/item_14.png" title="item:高性能な高圧洗浄機"></th>
           <th>高性能な高圧洗浄機</th>
@@ -552,7 +519,6 @@
           <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
-
         <tr>
           <th><img src="game_image/item_15.png" title="item:ローラーシューズ"></th>
           <th>ローラーシューズ</th>
@@ -560,7 +526,6 @@
           <th>Itemマス、選択イベント、Traderマス</th>
           <th>追加マス系/消費</th>
         </tr>
-
         <tr>
           <th><img src="game_image/item_40.png" title="item:不吉な栞"></th>
           <th>不吉な栞</th>
@@ -568,16 +533,7 @@
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
-      </table>
-      <p>影響アイテム</p>
-      <table>
-        <tr>
-          <th>画像</th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-        </tr>
+        
         <tr>
           <th><img src="game_image/item_17.png" title="item:影響中：逆転"></th>
           <th>影響中：逆転</th>
@@ -587,10 +543,10 @@
         </tr>
         
         <tr>
-          <th><img src="game_image/item_21.png" title="item:影響中：スキル使用禁止"></th>
-          <th>影響中：スキル使用禁止</th>
+          <th><img src="game_image/item_21.png" title="item:影響中：key使用禁止"></th>
+          <th>影響中：key使用禁止</th>
           <th>鍵の使用を禁止する。個数は、持続ターン数を示す。</th>
-          <th>エンチャント:スキル無効化、'禁止'の鍵</th>
+          <th>エンチャント:key無効化、'禁止'の鍵</th>
           <th>影響系</th>
         </tr>
         <tr>
@@ -623,142 +579,115 @@
           <th>影響系</th>
         </tr>
 
-        <tr>
-          <th><img src="game_image/item_41.png" title="item:影響中：青の印"></th>
-          <th>影響中：青の印</th>
-          <th>移動-1(効果重複なし)</th>
-          <th>Hexマス</th>
-          <th>影響系</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_44.png" title="item:影響中：黄色の印"></th>
-          <th>影響中：黄の印</th>
-          <th>ターン開始時にもらえるKOTコインが1に固定される(効果重複なし)</th>
-          <th>Hexマス</th>
-          <th>影響系</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_43.png" title="item:影響中：緑の印"></th>
-          <th>影響中：緑の印</th>
-          <th>トレイダーのアイテム数-3(効果重複なし)</th>
-          <th>Hexマス</th>
-          <th>影響系</th>
-        </tr>
-
-        <tr>
-          <th><img src="game_image/item_42.png" title="item:影響中：紫の印"></th>
-          <th>影響中：紫の印</th>
-          <th>選択イベントのアイテム数が1固定される(効果重複なし)</th>
-          <th>Hexマス</th>
-          <th>影響系</th>
-        </tr>
-      </table>
-      <p>解放アイテム</p>
-      <table>
-        <tr>
-          <th>画像</th>
-          <th>アイテム名</th>
-          <th>効果</th>
-          <th>入手方法</th>
-          <th>割り当て</th>
-        </tr>
         <tr id="item_key">
           <th><img src="game_image/item_33.png" title="item: 0 の鍵"></th>
           <th> 0 の鍵</th>
-          <th>スキル:0の宣言を解放する。ダイスを振らず、0を宣言でき、移動しない</th>
+          <th>スキル:0の宣言を解放する。ダイスを振らず、0を宣言でき、移動しない（1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_33.png" title="item: ダイス の鍵"></th>
-          <th> ダイス の鍵</th>
-          <th>スキル:ダイスを解放する。ダイスを降って進む</th>
+          <th><img src="game_image/item_33.png" title="item: 1 の鍵"></th>
+          <th> 1 の鍵</th>
+          <th>スキル:1の宣言を解放する。ダイスを振らず、1を宣言できる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
+          <th>鍵系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_33.png" title="item: 2 の鍵"></th>
+          <th> 2 の鍵</th>
+          <th>スキル:2の宣言を解放する。ダイスを振らず、2を宣言できる（1つ消費)</th>
+          <th>Itemマス、鍵鋳造キット、Traderマス</th>
+          <th>鍵系/消費</th>
+        </tr>
+        <tr>
+          <th><img src="game_image/item_33.png" title="item: 3 の鍵"></th>
+          <th> 3 の鍵</th>
+          <th>スキル:3の宣言を解放する。ダイスを振らず、3を宣言できる（1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 復活 の鍵"></th>
           <th> 復活 の鍵</th>
-          <th>スキル:マス復活を解放する。任意のマスを復活させる</th>
+          <th>スキル:マス復活を解放する。任意のマスを復活させる（1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 消失 の鍵"></th>
           <th> 消失 の鍵</th>
-          <th>スキル:マス消失を解放する。任意の効果マスを再配置されない状態で消失させる</th>
+          <th>スキル:マス消失を解放する。任意の効果マスを再配置されない状態で消失させる(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_33.png" title="item: 放電 の鍵"></th>
-          <th> 放電 の鍵</th>
-          <th>スキル:放電を解放する。指定マスのエンチャントを消す。 </th>
-          <th>Itemマス、鍵鋳造キット、Traderマス</th>
+          <th><img src="game_image/item_33.png" title="item: 反転 の鍵"></th>
+          <th> 反転 の鍵</th>
+          <th>スキル:方向反転を解放する。異変このターンの移動時、進行方向を反転させる(1つ消費)</th>
+          <th>Itemマス、Backマス(エンチャント:x2)、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 異変 の鍵"></th>
           <th> 異変 の鍵</th>
-          <th>スキル:方向異変を解放する。自分以外が次の移動時、進行方向を反転して進む</th>
+          <th>スキル:方向異変を解放する。自分以外が次の移動時、進行方向を反転して進む(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 公開 の鍵"></th>
           <th> 公開 の鍵</th>
-          <th>スキル:マス公開を解放する。指定したマスを全員に公開する</th>
+          <th>スキル:マス公開を解放する。指定したマスを全員に公開する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 推進 の鍵"></th>
           <th> 推進 の鍵</th>
-          <th>スキル:推進力を解放する。 次の移動が2マス増加する</th>
+          <th>スキル:推進力を解放する。 次の移動が2マス増加する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
-          <th><img src="game_image/item_33.png" title="item: 経過 の鍵"></th>
-          <th> 経過 の鍵</th>
-          <th>スキル:時間経過を解放する。 全てのマスの再配置時間が3周進む。</th>
+          <th><img src="game_image/item_33.png" title="item: 抑制 の鍵"></th>
+          <th> 抑制 の鍵</th>
+          <th>スキル:抑制力を解放する。 次の移動が2マス減少する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 帰還 の鍵"></th>
           <th> 帰還 の鍵</th>
-          <th>スキル:アクション＆アウェイを解放する。 次の移動が終了したとき、移動前の位置に戻る</th>
+          <th>スキル:アクション＆アウェイを解放する。 次の移動が終了したとき、移動前の位置に戻る(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 禁止 の鍵"></th>
           <th> 禁止 の鍵</th>
-          <th>スキル:ロックを解放する。 自分以外の鍵の使用を禁止する</th>
+          <th>スキル:ロックを解放する。 自分以外の鍵の使用を禁止する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 守護 の鍵"></th>
           <th> 守護 の鍵</th>
-          <th>スキル:保護シールドを解放する。 この移動で、マスの効果とエンチャントの影響を受けない</th>
+          <th>スキル:保護シールドを解放する。 この移動で、マスの効果とエンチャントの影響を受けない(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 制御 の鍵"></th>
           <th> 制御 の鍵</th>
-          <th>スキル:全体制御を解放する。 自分以外の次の移動が2マス減少する</th>
+          <th>スキル:全体制御を解放する。 自分以外の次の移動が2マス減少する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
         <tr>
           <th><img src="game_image/item_33.png" title="item: 浄化 の鍵"></th>
           <th> 浄化 の鍵</th>
-          <th>スキル:クリアを解放する。 自分以外の次の移動が2マス減少する</th>
+          <th>スキル:クリアを解放する。 自分以外の次の移動が2マス減少する(1つ消費)</th>
           <th>Itemマス、鍵鋳造キット、Traderマス</th>
           <th>鍵系/消費</th>
         </tr>
@@ -773,7 +702,7 @@
       </tr>
       <tr id="enc_4">
         <th>強制停止</th>
-        <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの再配置時間は5周。</th>
+        <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの再配置時間は60ターン。</th>
       </tr>
       <tr id="enc_1">
         <th>短縮再配置</th>
@@ -800,11 +729,6 @@
     <p>選択イベント</p>
     <ul>
       <li>限定系アイテム以外のアイテムの中からランダムに2つのアイテムが選ばれる。個数もランダム(初期では最高2つ)。</li>
-    </ul>
-    <p id="event_trade">ランダムアイテムイベント</p>
-    <ul>
-      <li>すべてのアイテムからランダムで１つアイテムが選ばれる。（ラッキーサングラスで増える）</li>
-      <li>Itemマスの効果</li>
     </ul>
     <p id="event_trade">トレードイベント</p>
     <ul>
@@ -851,43 +775,28 @@
       <p>※効果マス追加アイテムは、ルーレット装置、移動販売車、復活したバンドのCD、高性能な高圧洗浄機、レジャーシート、ローラーシューズ</p>
     </ul>
     <p id="event_mystery">ミステリーイベント</p>
+    <p>KOTコインを1枚ずつ捧げてランダムなイベントを成功させるとアイテムがもらえる。</p>
     <ul>
-      <li>話しかける相手を選ぶ選択肢（確定）</li>
-      <ul>
-        <li>トレーダー</li>
-        <p>トレーダーイベントが始まる</p>
-        <li>休憩しているおじいさん</li>
-        <p>ランダムアイテムイベントが始まる</p>
-      </ul>
-      <li>話しかける相手を選ぶ選択肢（ランダム - マイクで選択肢は増える）</li>
-      <p>    KOTコインを1枚ずつ捧げてランダムなイベントを成功させるとアイテムがもらえる。</p>
-      <ul>
-        <li>配達員　 「未知の物」</li>
-          <p>成功確率:12%</p>
-          <p>失敗時増加確率:2%</p>
-          <p>試行可能回数:8</p>
-          <p>イベント通過でブラックボックス獲得ができるイベント</p>
-        <li>買い物に来た主婦   「増量キャンペーン」</li>
-          <p>成功確率:10%</p>
-          <p>失敗時増加確率:5%</p>
-          <p>試行可能回数:6</p>
-          <p>イベント通過で手提バックが獲得ができるイベント</p>
-        <li>修理屋   「勝利の鍵」</li>
-          <p>成功確率:5%</p>
-          <p>失敗時増加確率:8%</p>
-          <p>試行可能回数:6</p>
-          <p>イベント通過で鍵鋳造キットが獲得ができるイベント</p>
-        <li>サングラスのお金持ち   「お金持ち気分」</li>
-          <p>成功確率:2%</p>
-          <p>失敗時増加確率:10%</p>
-          <p>試行可能回数:8</p>
-          <p>イベント通過でラッキーサングラスが獲得ができるイベント</p>
-          <li>金属の鎧をまとった人   「なんでも守れる金属」</li>
-            <p>成功確率:70%</p>
-            <p>失敗時増加確率:10%</p>
-            <p>試行可能回数:2</p>
-            <p>イベント通過で金属の塊が獲得ができるイベント</p>
-      </ul>
+      <li>「未知の物」</li>
+        <p>成功確率:12%</p>
+        <p>失敗時増加確率:2%</p>
+        <p>試行可能回数:8</p>
+        <p>イベント通過でブラックボックス獲得ができるイベント</p>
+      <li>「増量キャンペーン」</li>
+        <p>成功確率:10%</p>
+        <p>失敗時増加確率:5%</p>
+        <p>試行可能回数:6</p>
+        <p>イベント通過で手提バックが獲得ができるイベント</p>
+      <li>「勝利の鍵」</li>
+        <p>成功確率:5%</p>
+        <p>失敗時増加確率:8%</p>
+        <p>試行可能回数:6</p>
+        <p>イベント通過で鍵鋳造キットが獲得ができるイベント</p>
+      <li>「お金持ち気分」</li>
+        <p>成功確率:2%</p>
+        <p>失敗時増加確率:10%</p>
+        <p>試行可能回数:8</p>
+        <p>イベント通過でラッキーサングラスが獲得ができるイベント</p>
     </ul>
   </main>
   <footer>
