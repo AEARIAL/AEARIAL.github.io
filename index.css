@@ -1,0 +1,60 @@
+body{
+    padding: 8px 50px 10px 40px;
+}
+
+h2 {
+    padding: 1rem 2rem;
+    border-bottom: 4px dotted #000;
+    border-left: 4px dotted #000;
+}
+
+th{
+    padding: 8px 8px 8px 8px;
+    border: 1px dashed rgb(177, 177, 177);
+    background: #f4f4f4;
+}
+
+#box{
+    padding: 8px 8px 8px 28px;
+    background: #f4f4f4;
+}
+
+#fla{
+	color:rgb(155, 155, 155);
+    font-size : 12px;
+    border: 8px 8px 8px 8px;
+}
+
+#mouseover_color{
+	color:rgb(0, 218, 83)
+}
+
+#out_box{
+    padding: 0px 0px 0px 20px;
+    width: 97%;
+    background-color: rgb(246, 249, 252); 
+    border: 1px solid rgb(35, 30, 58); 
+}
+
+#in_box{
+    padding: 0px 0px 0px 20px;
+    width: 97%;
+    background-color: rgb(240, 245, 248); 
+    border: 1px solid rgb(46, 43, 58); 
+}
+
+#h3_box{
+    padding: 0px 0px 0px 20px;
+    width: 95%;
+}
+
+#h4_box{
+    padding: 0px 0px 0px 20px;
+    width: 95%;
+}
+
+#h5_box{
+    padding: 0px 0px 0px 20px;
+    width: 97%;
+}
+
