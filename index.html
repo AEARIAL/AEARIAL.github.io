@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AEARIALのページ</title>
   <link rel="stylesheet" href="index.css">
-  <style>
-    /* 初期状態で非表示にする */
-    #change-log {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -100,129 +94,33 @@
         </ul>
       </article>
       <article>
-        <h3>(新) Key Or Trap</h3>
-        <p>現在改修中のマルチプレイ対応ボードゲーム。</p>
+        <h3>Key Or Trap</h3>
+        <p>鍵を使うか、罠を仕掛けるか。2〜5人で遊ぶオンラインすごろくボードゲーム。</p>
         <ul>
-          <li>ジャンル: 2D / マルチプレイ / ボードゲーム</li>
-          <li><a href="NEWKOT/index.html" class="button">KeyOrTrap (test)</a> - <a href="KOT/index.html" class="button">KeyOrTrapをプレイ (vb01)</a></li>
-          <li><a href="kot_rule.html">ルール修正中</a></li>
-          <li><a href="https://aearial.github.io/my-app/">コスト計算ツール</a></li>
+          <li>ジャンル: オンライン / マルチプレイ / ボードゲーム</li>
+          <li><a href="KOT/index.html" class="button">Key Or Trapをプレイ（2026年10月11日リリース）</a></li>
+          <li><a href="KOT/manual.html">プレイガイド（マニュアル）を見る</a></li>
+          <li>ルールはゲーム内プレイガイドで確認できます</li>
+
         </ul>
-      </article>
-      <article>
-        <h3>(旧) Key Or Trap</h3>
-        <p>マス効果を自由に配置可能なマルチプレイすごろくゲーム。</p>
-        <ul>
-          <li>ジャンル: 2D / マルチプレイ / ボードゲーム</li>
-          <li><a href="KOTBCC/index.html" class="button">KeyOrTrapをプレイ (v21)</a></li>
-          <li><a href="old_kot_rule.html">ルール</a></li>
-        </ul>
-        <!-- ボタンと変更履歴部分 -->
-        <button id="toggle-button">変更履歴を表示</button>
-        <div id="change-log">
-          <h3>修正項目</h3>
-          <div id="h3_box">
-            <h4>v21:解読機の削除</h4>
-            <h4>v20:解読機&スキル調整</h4>
-            <h4 id="enc">エンチャント一覧</h4>
-            <p>効果マスに対する副次的な効果で、このマスに効果があるときにのみ効果がある。</p>
-            <table>
-              <tr id="enc_4">
-                <th>強制停止</th>
-                <th>このマスに効果があるとき、通過しようとしたプレイヤーは強制的に停止し効果を受ける<br>このマスの再配置時間は<font color=#AA00AA>(変更)</font>5周。</th>
-              </tr>
-            </table>
-            <h4>アイテム</h4>
-            <div id="h4_box">
-              <p>解放アイテム</p>
-              <table>
-                <p><font color=#0000CC>(-削除)</font></p>
-                <tr id="item_key">
-                  <th><img src="game_image/item_33.png" title="item: 1 の鍵"></th>
-                  <th> 1 の鍵</th>
-                  <th>スキル:1の宣言を解放する。ダイスを振らず、1を宣言でき、移動しない（1つ消費)</th>
-                </tr>
-                <tr id="item_key">
-                  <th><img src="game_image/item_33.png" title="item: 2 の鍵"></th>
-                  <th> 2 の鍵</th>
-                  <th>スキル:2の宣言を解放する。ダイスを振らず、2を宣言でき、移動しない（1つ消費)</th>
-                </tr>
-                <tr id="item_key">
-                  <th><img src="game_image/item_33.png" title="item: 3 の鍵"></th>
-                  <th> 3 の鍵</th>
-                  <th>スキル:3の宣言を解放する。ダイスを振らず、3を宣言でき、移動しない（1つ消費)</th>
-                </tr>                  
-                <tr>
-                  <th><img src="game_image/item_33.png" title="item: 反転 の鍵"></th>
-                  <th>反転 の鍵</th>
-                  <th>スキル:方向反転を解放する。異変このターンの移動時、進行方向を反転させる(1つ消費)</th>
-                </tr>
-                <tr>
-                  <th><img src="game_image/item_33.png" title="item: 抑制 の鍵"></th>
-                  <th>抑制 の鍵</th>
-                  <th>スキル:抑制力を解放する。 次の移動が2マス減少する(1つ消費)</th>
-                </tr>
-              </table>
-              <p><font color=#CC0000>(+追加)</font></p>
-              <table>
-                <tr>
-                  <th><img src="game_image/item_33.png" title="item: ダイス の鍵"></th>
-                  <th> ダイス の鍵</th>
-                  <th>スキル:ダイスを解放する。ダイスを降って進む。</th>
-                </tr>
-                <tr>
-                  <th><img src="game_image/item_33.png" title="item: 放電 の鍵"></th>
-                  <th>放電 の鍵</th>
-                  <th>スキル:放電を解放する。指定マスのエンチャントを消す。</th>
-                  <th>Itemマス、鍵鋳造キット、Traderマス</th>
-                </tr>
-                <tr>
-                  <th><img src="game_image/item_33.png" title="item: 経過 の鍵"></th>
-                  <th>経過 の鍵</th>
-                  <th>スキル:時間経過を解放する。 全てのマスの再配置時間が3周進む。</th>
-                  <th>Itemマス、鍵鋳造キット、Traderマス</th>
-                </tr>
-              </table>
-            </div>
-            <h4>イベント</h4>
-            <div id="h4_box">
-              <p>mysteryイベント</p>
-              <p><font color=#AA00AA>(変更)</font>mysteryイベントの開始に新たなスライドを追加、その選択肢によって行うイベントが変わる</p>
-              <p><font color=#AA00AA>(変更)</font>トレイダー、ランダムアイテムイベントへ分岐可能に(固定の選択肢)</p>
-              <p><font color=#AA00AA>(変更)</font>3つ目（マイク取得でそれ以上）の選択肢には、ランダムイベント（今までのミステリーイベントでランダムに出現していたもの）が追加される</p>
-              <p>新たなランダムイベント</p>
-              <ul>
-                <ul>
-                    <li><font color=#CC0000>(+追加)</font>イベント「なんでも守れる金属」</li>
-                    <p>イベント通過で金属の塊が獲得ができるイベント</p>
-                </ul>
-              </ul>
-            <br>
-            </div>
-          </div>
-        </div>
+        <details class="release-notes">
+          <summary>リリースノート</summary>
+          <section>
+            <h4>2026年10月11日 リリース</h4>
+            <ul>
+              <li>オンラインルームで対戦できる、30マスの往復すごろくを公開。</li>
+              <li>盤面をドラッグで移動、ホイールで拡大・縮小できる操作に対応。</li>
+              <li>ゲーム内にプレイガイドを表示。鍵・トラップ・マス効果のルールを確認可能。</li>
+              <li>音楽プレイヤーを曲一覧から選べる表示に変更。</li>
+            </ul>
+          </section>
+        </details>
       </article>
     </section>
   </main>
   <footer>
     <p>AEARIAL</p>
   </footer>
-  <!-- JavaScript -->
-  <script>
-    const toggleButton = document.getElementById('toggle-button');
-    const changeLog = document.getElementById('change-log');
-
-    // ボタンのクリックイベント
-    toggleButton.addEventListener('click', () => {
-      if (changeLog.style.display === 'none' || changeLog.style.display === '') {
-        changeLog.style.display = 'block'; // 表示
-        toggleButton.textContent = '変更履歴を隠す';
-      } else {
-        changeLog.style.display = 'none'; // 非表示
-        toggleButton.textContent = '変更履歴を表示';
-      }
-    });
-  </script>
   <!-- ===== SoundCloud API ===== -->
   <script src="https://w.soundcloud.com/player/api.js"></script>
 
