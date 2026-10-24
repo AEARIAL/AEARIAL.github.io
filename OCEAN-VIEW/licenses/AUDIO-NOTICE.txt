@@ -1,0 +1,53 @@
+OCEAN:VIEW / 音源の出典と編集記録
+2026-10-24
+
+BGM: ユーザー指定の既存ローカル音源
+  MidRoom.wav -> mid_room.ogg (タイトル・実習・通常探索)
+  OutSide.wav -> outside.ogg (襲来予告・巨大生物・出航)
+
+効果音: ユーザー指定の既存ローカル素材集から選択
+  confirm.ogg
+    Cinematic Sound Design - Interface & Infographics
+    Interface Accept Glassy Snap.wav
+  back.ogg
+    Cinematic Sound Design - UI Interaction Elements
+    Deny Muted.wav
+  build.ogg
+    344 Audio - Antique Small Metals
+    METLMvmt_  Tinkering Antique Lock_344 Audio_Antique Small Metals.wav
+  craft.ogg
+    CB_Sounddesign - Applicable Sounds - Organic UI and Building Games SFX
+    UIMisc_Kalimba 3 Up_CB Sounddesign_APPlicable Sounds.wav
+  mine.ogg
+    344 Audio - Antique Small Metals
+    METLMvmt_  Antique Measuring Tape_344 Audio_Antique Small Metals.wav
+  punch.ogg
+    David Dumais Audio - Melee Weapons Sound Effects Pack 2
+    METLFric_SWING SCRAPE Swift Melee Weapon Swing With A Long Blade 14_DDUMAIS_MWP2.wav
+  hit.ogg
+    David Dumais Audio - Melee Weapons Sound Effects Pack 2
+    METLImpt_METAL SWING HIT Weapon Swing To Metallic Body Impact And Resonant Tail 01_DDUMAIS_MWP2.wav
+  shot.ogg
+    Cinematic Sound Design - Interface & Infographics
+    Interface Percussion Snap.wav
+  warning.ogg
+    Cinematic Sound Design - System & UI Feedback Elements
+    Interface Sci-Fi Ping Down.wav
+  depart.ogg
+    Cinematic Sound Design - Hybrid Game & UI Elements
+    Game Entry Happy Short.wav
+  complete.ogg
+    Cinematic Sound Design - User Interface
+    Button Arp Twinkle.wav
+
+編集: BGMはフル尺をOgg Vorbisへ圧縮・音量調整・端の短いフェード。
+効果音は短い部分を抽出、mono/32kHz、音量調整・帯域調整・端のフェード後Ogg Vorbis化。
+元WAV・音源集・変換ツール自体は同梱していません。
+
+対象フォルダー内では、選択音源に適用されるライセンス本文を確認できませんでした。
+本表はユーザーが指定した既存素材の出典記録であり、作者・CC0・パブリックドメイン・
+無制限の再配布許諾を新たに主張するものではありません。元音源の利用条件が適用されます。
+このゲームへの同梱から、個々の音源を抜き出して再配布・二次利用する権利は付与しません。
+
+圧縮音源は合計3,872,448 bytes。詳細なcodec・長さ・SHA-256とソフトウェア測定値は
+assets/audio/audio_manifest.jsonに記録しています。絶対ローカルパスは公開記録に含めません。
