@@ -1,0 +1,13 @@
+OCEAN:VIEW
+
+ゲーム独自のプログラム・文章・図形・アイコン等の権利は、それぞれの権利者に帰属します。
+この通知は、ゲーム独自部分の再配布・改変等について新たな許諾を与えるものではありません。
+
+本ゲームには無料で利用できるGodot EngineとBIZ UD Gothicフォントを使用しています。
+それぞれの権利表示・利用条件は同梱のGodotライセンス、第三者通知、フォントのOFLを参照してください。
+
+Godot Engine: https://godotengine.org/license/
+BIZ UD Gothic: https://github.com/googlefonts/morisawa-biz-ud-gothic
+
+本ゲームの制作・配布・運用は無料の範囲で行います。
+有料プラン・従量課金サービス・有料サブスクリプション・購入・無料枠超過課金は利用しません。

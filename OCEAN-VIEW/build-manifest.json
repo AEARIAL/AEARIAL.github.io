@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "game": "OCEAN:VIEW",
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "generatedAt": "2026-10-24T05:36:49.689Z",
+  "staging": false,
+  "backend": "wss://ocean-view.aerial593285104138434358439.workers.dev",
+  "buildId": "1b8f991af460",
+  "inputSha256": "1b8f991af4604bc75573e5981290ec07f71a62518cd824f25219f67b4202f576",
+  "exportTemplateSha256": "d3ee2f08cef0cf3cf6678a6355a92a8db48ccdd35cbd2e8bfd5f0e8a0b4032a0",
+  "assetBasename": "ocean-1b8f991af460",
+  "cache": {
+    "serviceWorker": false,
+    "pwa": false,
+    "contentVersionedAssets": true,
+    "entry": "index.html",
+    "note": "Replace the complete release together. Old cached HTML may continue using its matching old asset set."
+  },
+  "payloadBytes": 43784822,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 5921,
+      "sha256": "e41cc9f249280f04b95c73c7fdcf52fd1e44b36d8e19fdb9824667c35bbc312a"
+    },
+    {
+      "path": "licenses/BIZ-UD-Gothic-OFL.txt",
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    {
+      "path": "licenses/GAME-NOTICE.txt",
+      "bytes": 860,
+      "sha256": "fe66e727346460d27a3a4fe325182ac2a351bf024681f33193a85e98ff5020a8"
+    },
+    {
+      "path": "licenses/GODOT-LICENSE.txt",
+      "bytes": 1187,
+      "sha256": "16f894b8d71d5c451009c88ba4aa8e81ea062457e4b5749e9a58d32b0f2677b3"
+    },
+    {
+      "path": "licenses/GODOT-THIRD-PARTY.txt",
+      "bytes": 109836,
+      "sha256": "59c338da732664d24aee438fb2a49671c8be9131cddb5837bf9f8f122862fc19"
+    },
+    {
+      "path": "licenses.html",
+      "bytes": 1135,
+      "sha256": "5a7e62303153bbe12b4005fa8ce45f9ffdcdb2ed2fba013dc08ecd25bde2dc89"
+    },
+    {
+      "path": "ocean-1b8f991af460.apple-touch-icon.png",
+      "bytes": 11944,
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    {
+      "path": "ocean-1b8f991af460.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "path": "ocean-1b8f991af460.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "path": "ocean-1b8f991af460.icon.png",
+      "bytes": 5700,
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    {
+      "path": "ocean-1b8f991af460.js",
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    {
+      "path": "ocean-1b8f991af460.pck",
+      "bytes": 3817548,
+      "sha256": "ee5bb08fe070f9d7d4123bb6575fc6943e9e0a982d9e49264c33f1ac0c4dbe4d"
+    },
+    {
+      "path": "ocean-1b8f991af460.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "path": "ocean-1b8f991af460.wasm",
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  ]
+}
