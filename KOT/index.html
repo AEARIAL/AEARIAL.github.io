@@ -1,220 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>Key Or Trap</title>
-		<style>
-html, body, #canvas {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1827">
+  <title>Key Or Trap</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #080f19; color: #eff4fa; }
+    body { font-family: sans-serif; }
+    #canvas { display: block; margin: 0; padding: 0; border: 0; touch-action: none; }
+    #canvas:focus { outline: none; }
+    #loading { position: fixed; inset: 0; display: grid; place-content: center; gap: 18px; padding: 24px; background: #0c1827; text-align: center; }
+    #loading progress { width: min(320px, 75vw); accent-color: #86dacb; }
+    #notice { max-width: 640px; white-space: pre-wrap; line-height: 1.7; }
+    #stage { position: absolute; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); overflow: hidden; }
+    #game-frame { position: absolute; border: 0; display: block; transform-origin: center; background: #080f19; }
+    #display-bar { position: absolute; bottom: max(4px, env(safe-area-inset-bottom)); left: max(8px, env(safe-area-inset-left)); right: max(8px, env(safe-area-inset-right)); height: 44px; display: flex; justify-content: center; gap: 8px; align-items: center; font-size: 14px; }
+    #display-bar button, #display-menu button { color: #eff4fa; background: #183146; border: 1px solid #647b87; border-radius: 8px; padding: 8px 14px; min-height: 44px; font: inherit; cursor: pointer; }
+    #display-bar button:focus-visible, #display-menu button:focus-visible { outline: 3px solid #f0d28c; outline-offset: 2px; }
+    #display-menu { position: absolute; bottom: calc(max(4px, env(safe-area-inset-bottom)) + 52px); left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right)); max-width: 480px; margin: auto; padding: 18px; background: #102638; border: 1px solid #c2a76c; border-radius: 14px; box-shadow: 0 8px 32px #0009; z-index: 2; }
+    #display-menu h2 { font-size: 18px; margin: 0 0 12px; color: #f0d28c; }
+    #display-menu p { margin: 12px 0; font-size: 14px; line-height: 1.6; }
+    #display-menu .choices { display: grid; gap: 8px; }
+    #display-menu button[aria-pressed="true"] { background: #20554f; border-color: #88dec9; }
+    [hidden] { display: none !important; }
+  </style>
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-c1b65ba.icon.png" />
+<link rel="apple-touch-icon" href="kot-c1b65ba.apple-touch-icon.png"/>
 
-body {
-	color: white;
-	background-color: black;
-	overflow: hidden;
-	touch-action: none;
-}
-
-#canvas {
-	display: block;
-}
-
-#canvas:focus {
-	outline: none;
-}
-
-#status, #status-splash, #status-progress {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-#status, #status-splash {
-	top: 0;
-	bottom: 0;
-}
-
-#status {
-	background-color: #242424;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	visibility: hidden;
-}
-
-#status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-}
-
-#status-splash.show-image--false {
-	display: none;
-}
-
-#status-splash.fullsize--true {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-}
-
-#status-splash.use-filter--false {
-	image-rendering: pixelated;
-}
-
-#status-progress, #status-notice {
-	display: none;
-}
-
-#status-progress {
-	bottom: 10%;
-	width: 50%;
-	margin: 0 auto;
-}
-
-#status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
-	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
-	line-height: 1.3;
-	margin: 0 2rem;
-	overflow: hidden;
-	padding: 1rem;
-	text-align: center;
-	z-index: 1;
-}
-		</style>
-		<link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-a131fd5.icon.png" />
-<link rel="apple-touch-icon" href="kot-a131fd5.apple-touch-icon.png"/>
-
-	</head>
-	<body>
-		<canvas id="canvas">
-			Your browser does not support the canvas tag.
-		</canvas>
-
-		<noscript>
-			Your browser does not support JavaScript.
-		</noscript>
-
-		<div id="status">
-			<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="kot-a131fd5.png" alt="">
-			<progress id="status-progress"></progress>
-			<div id="status-notice"></div>
-		</div>
-
-		<script src="kot-a131fd5.js"></script>
-		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-a131fd5","experimentalVK":true,"fileSizes":{"kot-a131fd5.pck":101142040,"kot-a131fd5.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
-const GODOT_THREADS_ENABLED = false;
-const engine = new Engine(GODOT_CONFIG);
-
+</head>
+<body>
+<canvas id="canvas" tabindex="0">このブラウザーではゲーム画面を表示できません。</canvas>
+<div id="loading" role="status"><div id="notice">時計塔を準備しています</div><progress id="progress" aria-label="ゲームの読み込み"></progress></div>
+<noscript>プレイするにはJavaScriptを有効にしてください。</noscript>
+<script>
 (function () {
-	const statusOverlay = document.getElementById('status');
-	const statusProgress = document.getElementById('status-progress');
-	const statusNotice = document.getElementById('status-notice');
+  'use strict';
+  const url = new URL(location.href);
+  let gameFrame = false;
+  try { gameFrame = parent !== window && parent.document.documentElement.dataset.kotHost === 'true' && url.searchParams.get('kotFrame') === '1'; } catch (_) {}
+  if (gameFrame) {
+    // The browser transforms iframe input, including touches and the virtual keyboard.
+    // Godot keeps its normal canvas, 1080p viewport and coordinate calculations.
+    const script = document.createElement('script');
+    script.src = 'kot-c1b65ba.js';
+    script.onerror = () => fail('ゲームを読み込めませんでした。通信状況を確認して再読み込みしてください。');
+    script.onload = () => {
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-c1b65ba","experimentalVK":true,"fileSizes":{"kot-c1b65ba.pck":101244716,"kot-c1b65ba.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      const missing = Engine.getMissingFeatures({threads: false});
+      if (missing.length) { fail('このブラウザーでは必要な機能が利用できません。\n' + missing.join('\n')); return; }
+      const engine = new Engine(config);
+      engine.startGame({onProgress(current, total) {
+        const progress = document.getElementById('progress');
+        if (total > 0) { progress.max = total; progress.value = current; }
+        else { progress.removeAttribute('value'); }
+      }}).then(() => document.getElementById('loading').remove(), fail);
+    };
+    function fail(error) {
+      console.error(error);
+      document.getElementById('notice').textContent = typeof error === 'string' ? error : '起動できませんでした。再読み込みしてください。';
+      document.getElementById('progress').hidden = true;
+    }
+    document.body.append(script);
+    return;
+  }
 
-	let initializing = true;
-	let statusMode = '';
-
-	function setStatusMode(mode) {
-		if (statusMode === mode || !initializing) {
-			return;
-		}
-		if (mode === 'hidden') {
-			statusOverlay.remove();
-			initializing = false;
-			return;
-		}
-		statusOverlay.style.visibility = 'visible';
-		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
-		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
-		statusMode = mode;
-	}
-
-	function setStatusNotice(text) {
-		while (statusNotice.lastChild) {
-			statusNotice.removeChild(statusNotice.lastChild);
-		}
-		const lines = text.split('\n');
-		lines.forEach((line) => {
-			statusNotice.appendChild(document.createTextNode(line));
-			statusNotice.appendChild(document.createElement('br'));
-		});
-	}
-
-	function displayFailureNotice(err) {
-		console.error(err);
-		if (err instanceof Error) {
-			setStatusNotice(err.message);
-		} else if (typeof err === 'string') {
-			setStatusNotice(err);
-		} else {
-			setStatusNotice('An unknown error occurred.');
-		}
-		setStatusMode('notice');
-		initializing = false;
-	}
-
-	const missing = Engine.getMissingFeatures({
-		threads: GODOT_THREADS_ENABLED,
-	});
-
-	if (missing.length !== 0) {
-		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
-			let serviceWorkerRegistrationPromise;
-			try {
-				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
-			} catch (err) {
-				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
-			}
-			// There's a chance that installing the service worker would fix the issue
-			Promise.race([
-				serviceWorkerRegistrationPromise.then((registration) => {
-					if (registration != null) {
-						return Promise.reject(new Error('Service worker already exists.'));
-					}
-					return registration;
-				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
-				new Promise((resolve) => {
-					setTimeout(() => resolve(), 2000);
-				}),
-			]).then(() => {
-				// Reload if there was no error.
-				window.location.reload();
-			}).catch((err) => {
-				console.error('Error while registering service worker:', err);
-			});
-		} else {
-			// Display the message as usual
-			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
-			displayFailureNotice(missingMsg + missing.join('\n'));
-		}
-	} else {
-		setStatusMode('progress');
-		engine.startGame({
-			'onProgress': function (current, total) {
-				if (current > 0 && total > 0) {
-					statusProgress.value = current;
-					statusProgress.max = total;
-				} else {
-					statusProgress.removeAttribute('value');
-					statusProgress.removeAttribute('max');
-				}
-			},
-		}).then(() => {
-			setStatusMode('hidden');
-		}, displayFailureNotice);
-	}
+  document.documentElement.dataset.kotHost = 'true';
+  document.getElementById('canvas').remove();
+  document.getElementById('loading').remove();
+  const storageKey = 'kot.display.rotation.v1';
+  const validModes = ['right', 'left', 'off'];
+  let mode = 'right';
+  try { const saved = localStorage.getItem(storageKey); if (validModes.includes(saved)) mode = saved; } catch (_) {}
+  const stage = document.createElement('main');
+  stage.id = 'stage';
+  const frame = document.createElement('iframe');
+  frame.id = 'game-frame';
+  frame.title = 'Key Or Trap ゲーム画面';
+  frame.allow = 'autoplay; fullscreen; clipboard-write';
+  frame.allowFullscreen = true;
+  url.searchParams.set('kotFrame', '1');
+  frame.src = url.href;
+  stage.append(frame);
+  document.body.append(stage);
+  const bar = document.createElement('nav');
+  bar.id = 'display-bar';
+  bar.setAttribute('aria-label', '画面表示');
+  bar.innerHTML = '<button id="display-toggle" aria-expanded="false" aria-controls="display-menu">画面表示</button><span id="display-state"></span>';
+  document.body.append(bar);
+  const menu = document.createElement('section');
+  menu.id = 'display-menu';
+  menu.hidden = true;
+  menu.setAttribute('aria-label', '画面の向き');
+  menu.innerHTML = '<h2>縦画面での表示</h2><div class="choices"><button data-mode="right">右へ回して大きく表示</button><button data-mode="left">左へ回して大きく表示</button><button data-mode="off">回転しない</button></div><p>端末を横にすると通常の横画面に戻ります。対戦はそのまま続けられます。</p><button id="display-close">閉じる</button>';
+  document.body.append(menu);
+  const toggle = document.getElementById('display-toggle');
+  const coarse = matchMedia('(pointer: coarse)');
+  let rotated = false;
+  function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+  function layout() {
+    // A desktop window remains unchanged. Touch-capable narrow portrait windows
+    // can rotate, while tablets/phones in landscape always use the normal layout.
+    const touch = coarse.matches || navigator.maxTouchPoints > 0;
+    bar.hidden = !touch;
+    if (!touch) closeMenu();
+    stage.style.bottom = touch ? 'calc(env(safe-area-inset-bottom) + 52px)' : 'env(safe-area-inset-bottom)';
+    const width = stage.clientWidth, height = stage.clientHeight;
+    rotated = touch && mode !== 'off' && innerHeight > innerWidth;
+    const w = rotated ? height : width, h = rotated ? width : height;
+    frame.style.width = w + 'px'; frame.style.height = h + 'px';
+    frame.style.left = (width - w) / 2 + 'px'; frame.style.top = (height - h) / 2 + 'px';
+    frame.style.transform = rotated ? 'rotate(' + (mode === 'left' ? -90 : 90) + 'deg)' : 'none';
+    document.getElementById('display-state').textContent = rotated ? (mode === 'left' ? '左回転' : '右回転') : '通常表示';
+    for (const button of menu.querySelectorAll('[data-mode]')) button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
+  }
+  toggle.onclick = () => { menu.hidden = !menu.hidden; toggle.setAttribute('aria-expanded', String(!menu.hidden)); if (!menu.hidden) menu.querySelector('[aria-pressed="true"]').focus(); };
+  document.getElementById('display-close').onclick = () => { closeMenu(); toggle.focus(); };
+  for (const button of menu.querySelectorAll('[data-mode]')) button.onclick = () => {
+    mode = button.dataset.mode;
+    try { localStorage.setItem(storageKey, mode); } catch (_) {}
+    layout(); closeMenu(); toggle.focus();
+  };
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); event.preventDefault(); } });
+  addEventListener('resize', layout);
+  coarse.addEventListener('change', layout);
+  new ResizeObserver(layout).observe(stage);
+  layout();
 }());
-		</script>
-	</body>
+</script>
+</body>
 </html>
 

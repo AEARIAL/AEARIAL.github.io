@@ -1,0 +1,66 @@
+{
+  "release": "c1b65ba",
+  "date": "2026-10-26",
+  "workerVersion": "e6823fe2-6e49-4776-8be1-517aed9e5309",
+  "backend": "https://key-or-trap.aerial593285104138434358439.workers.dev",
+  "files": {
+    "kot-c1b65ba.apple-touch-icon.png": {
+      "bytes": 11944,
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    "kot-c1b65ba.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "kot-c1b65ba.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "index.html": {
+      "bytes": 8789,
+      "sha256": "43a02de840788f4a00a29f9de99e26a676f19513e55ffb36624706de513fa37c"
+    },
+    "kot-c1b65ba.icon.png": {
+      "bytes": 5700,
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    "kot-c1b65ba.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "kot-c1b65ba.pck": {
+      "bytes": 101244716,
+      "sha256": "3e46e81f6e806f0e386608a9751fd8e9da8c432311ec7904f2dc52a0acba9c19"
+    },
+    "kot-c1b65ba.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "kot-c1b65ba.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  },
+  "manualSha256": {
+    "KeyOrTrap_ルール_01.png": "9315ad21d460752bf3bee0e96816ef1f62b2291332d9d81943efae1600ba1db5",
+    "KeyOrTrap_ルール_02.png": "70787db8ea6305e5e9640ab3d87f77c4f3ce818e6345ef575c85d716490c8646",
+    "KeyOrTrap_ルール_03.png": "6cb5842f24b347359e606917bf38085e1bdb1e32a22d685aa14d6d39f4eff04d",
+    "KeyOrTrap_ルール_04.png": "f52fb764c34406dfe8f91089d6873b56bb0c9bdcf0f45520c6ccd1a1f9c3bb35",
+    "KeyOrTrap_ルール_05.png": "8a29be6882207347a0eb1e33ec5bbc45b16be1699c58159a45033c5a0b4c8b24",
+    "KeyOrTrap_ルール_06.png": "d23e7c742dde3d2ce81c5927f6dc5bb000b3f905ee399047655166bcd0c09dda",
+    "KeyOrTrap_ルール_07.png": "576fc5db5665187416347afb397368cb390694e6f3a8b0886d9b6cd3afa78287",
+    "KeyOrTrap_ルール_08.png": "3bf275ec23670a8e84bbaee26838ceef6653e7053a120b026f7d6241df2e963b",
+    "KeyOrTrap_ルール_09.png": "9fd5436f3a7810643c21016916bf2a4ad84b4a426e68565ee8c2375934fdafc2",
+    "KeyOrTrap_ルール_10.png": "b9bf432b0b468682390bb81c9880590042d0ce52d47fc5b8c1a1962b7449607f",
+    "KeyOrTrap_ルール_11.png": "a72039e038ca89f868c8cef04fc011f4b59b27057ce2415014cf3d40516f8980",
+    "KeyOrTrap_ルール_12.png": "5b2b269f9f071256b9be0075f44da0b415be57c675d381f2831a61acdd6c9117",
+    "KeyOrTrap_ルール_13.png": "cc1e36422ab41fdff440d027355caa344310d655bcec07840bede04c5a52be55",
+    "KeyOrTrap_ルール_14.png": "0ea032a2a9d40455d00edae00e9c536d91b9be95e63ac9b1726191b3ba40ad22",
+    "KeyOrTrap_ルール_15.png": "cc1e9ed221a3c7e05b30512f6f1de98317d2b37fdcfc637d9d13f65858d682b0",
+    "KeyOrTrap_ルール_16.png": "fc1ab200f0d2e48aba7a02290ce54ec0a54e3d5bea62018c70701b7f3f56131a",
+    "KeyOrTrap_ルール_17.png": "af8a01348c7918dbfcbee2d8c1cf387c4ea158e5d984b0dad6189a74eb7a8b1e",
+    "KeyOrTrap_ルール_18.png": "c6e9f524d538a77fc0fdcc0ceb6219e01251a9d92e1fe2aff1f379bdaf3a5aa4",
+    "KeyOrTrap_ルール_19.png": "32f9bbd57bf561aa45f49eeabd23897d02613a9093b1b7c669e4ee3d8e3fac71",
+    "KeyOrTrap_ルール_20.png": "dd3177a8102c2cb860b7e7b2b968421c1e2ecf3289f634fa5936f469abf5380b"
+  }
+}
