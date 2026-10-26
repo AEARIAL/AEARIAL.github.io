@@ -2,13 +2,13 @@
   "format": 1,
   "game": "OCEAN:VIEW",
   "godot": "4.7.2.stable.official.ed1daf0bf",
-  "generatedAt": "2026-10-25T18:18:57.376Z",
+  "generatedAt": "2026-10-26T13:23:20.600Z",
   "staging": false,
   "backend": "wss://ocean-view.aerial593285104138434358439.workers.dev",
-  "buildId": "d8eb34f78a29",
-  "inputSha256": "d8eb34f78a29a1a58647bde0b4c7db5eb5b3d76aa108bfc9cd71dba324d9a6b8",
+  "buildId": "7bc9e589e85b",
+  "inputSha256": "7bc9e589e85b735859242f187f592e70a5c6a727757c0250281595ba7fa12682",
   "exportTemplateSha256": "d3ee2f08cef0cf3cf6678a6355a92a8db48ccdd35cbd2e8bfd5f0e8a0b4032a0",
-  "assetBasename": "ocean-d8eb34f78a29",
+  "assetBasename": "ocean-7bc9e589e85b",
   "cache": {
     "serviceWorker": false,
     "pwa": false,
@@ -16,12 +16,12 @@
     "entry": "index.html",
     "note": "Replace the complete release together. Old cached HTML may continue using its matching old asset set."
   },
-  "payloadBytes": 47923867,
+  "payloadBytes": 47925743,
   "files": [
     {
       "path": "index.html",
       "bytes": 5921,
-      "sha256": "312eef8ad19578df453efca6e34a164ccad293c14e99a74deebad87b2d38fc6e"
+      "sha256": "0a83fcdbd80f57b5780bf6a3554df97181c315ede9e2f633b89d4754aea29dfb"
     },
     {
       "path": "licenses/AUDIO-NOTICE.txt",
@@ -54,42 +54,42 @@
       "sha256": "10036f96848bc768f6e85c9a4597a0f0ddf28025b32b9e84c0b824e9a8bc5970"
     },
     {
-      "path": "ocean-d8eb34f78a29.apple-touch-icon.png",
+      "path": "ocean-7bc9e589e85b.apple-touch-icon.png",
       "bytes": 11944,
       "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
     },
     {
-      "path": "ocean-d8eb34f78a29.audio.position.worklet.js",
+      "path": "ocean-7bc9e589e85b.audio.position.worklet.js",
       "bytes": 2973,
       "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
     },
     {
-      "path": "ocean-d8eb34f78a29.audio.worklet.js",
+      "path": "ocean-7bc9e589e85b.audio.worklet.js",
       "bytes": 7298,
       "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
     },
     {
-      "path": "ocean-d8eb34f78a29.icon.png",
+      "path": "ocean-7bc9e589e85b.icon.png",
       "bytes": 5700,
       "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
     },
     {
-      "path": "ocean-d8eb34f78a29.js",
+      "path": "ocean-7bc9e589e85b.js",
       "bytes": 279815,
       "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
     },
     {
-      "path": "ocean-d8eb34f78a29.pck",
-      "bytes": 7953812,
-      "sha256": "a87edbcf9952a29effc76e9e17bcb9ab67185af340c3aae0271d39389e31c4e4"
+      "path": "ocean-7bc9e589e85b.pck",
+      "bytes": 7955688,
+      "sha256": "438c9a4fef1827cfde0631ceb3b3119a4d1980c3caf4b4b0be25723e30125d38"
     },
     {
-      "path": "ocean-d8eb34f78a29.png",
+      "path": "ocean-7bc9e589e85b.png",
       "bytes": 21443,
       "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
     },
     {
-      "path": "ocean-d8eb34f78a29.wasm",
+      "path": "ocean-7bc9e589e85b.wasm",
       "bytes": 39514754,
       "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
     }
