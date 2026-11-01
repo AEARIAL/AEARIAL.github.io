@@ -1,0 +1,138 @@
+{
+  "release": "3586982",
+  "sourceCommit": "358698210b5fa040bc81ae8bef66a36d17d2770a",
+  "date": "2026-11-02",
+  "workerVersion": "3b24c941-5db0-4f9f-897d-e0f18a70d04d",
+  "backend": "https://key-or-trap.aerial593285104138434358439.workers.dev",
+  "manualRemoved": true,
+  "files": {
+    "index.html": {
+      "bytes": 8789,
+      "sha256": "090b8687f44520d32271ddc98ec350629f11007177633aecd5011061abe8112c"
+    },
+    "kot-3586982.apple-touch-icon.png": {
+      "bytes": 11944,
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    "kot-3586982.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "kot-3586982.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "kot-3586982.icon.png": {
+      "bytes": 5700,
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    "kot-3586982.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "kot-3586982.pck": {
+      "bytes": 101960776,
+      "sha256": "3f4041c2212a78e21cbcd90f499b04c7bc7e09ba986be316d851f4926980f16a"
+    },
+    "kot-3586982.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "kot-3586982.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    },
+    "guide/guide-data.json": {
+      "bytes": 24122,
+      "sha256": "ef7f0610e4f44216c421abe8a9eb6cef56b2b2b4fe08dd0cd6658357882f5fe7"
+    },
+    "guide/guide.css": {
+      "bytes": 8104,
+      "sha256": "90e8d10da0da949d6e6c95768427c04ae459238a0abdc3ed71cf7c44552039c0"
+    },
+    "guide/guide.js": {
+      "bytes": 5755,
+      "sha256": "5c41d4fc035f7d84c91a5d6b97af3f113b55271bc8dbb56f47414842cad6b66a"
+    },
+    "guide/index.html": {
+      "bytes": 4266,
+      "sha256": "4ec2a6717792c28e6b84d34ec60462a65cfde64465ec75ba59bdbdb72d5b0030"
+    },
+    "guide/assets/board.png": {
+      "bytes": 1162091,
+      "sha256": "5ab8ff1968b04186c58ec893763f7b043f08939a17a722e3c437c86b5086e3e5"
+    },
+    "guide/assets/dice_order.png": {
+      "bytes": 134041,
+      "sha256": "0790306eb1e2ce840663f87893d11ea09ed080cc1647d1b1e4fb8d296234f855"
+    },
+    "guide/assets/event.png": {
+      "bytes": 107635,
+      "sha256": "50f2f17f6d96cc261ea1553f287483726e187d90946d30260605b2dd48d6b334"
+    },
+    "guide/assets/extra_actions.png": {
+      "bytes": 1175018,
+      "sha256": "40425e67b00d9990363785e26cd7e0ba9d377b1a9758fc5a9bcdfed734f09544"
+    },
+    "guide/assets/guide.woff2": {
+      "bytes": 85448,
+      "sha256": "3df7eade7fe116663264e3fa54f16d30f86fa398a34476bfee9c7d93ebdc9641"
+    },
+    "guide/assets/hud.png": {
+      "bytes": 1162033,
+      "sha256": "67020c44add9512b4e04f5032e89dff4a689639ed64d65122303c898f7c9534e"
+    },
+    "guide/assets/keys.png": {
+      "bytes": 1315041,
+      "sha256": "1f975818158ef31800c5e08ffe1e752aacfd4e788260bc41d3c8d93aa8d6c4f4"
+    },
+    "guide/assets/menu.png": {
+      "bytes": 103153,
+      "sha256": "3a8db4e8366bf5611f37e49f8cc65248282f1fa43686a011ec9694524d197d0e"
+    },
+    "guide/assets/OFL.txt": {
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    "guide/assets/practice_growth.png": {
+      "bytes": 129187,
+      "sha256": "3cbe4db10e5d7dea8bf21e416b7eb62e2e7d84f0db00783d8d24e79f06562678"
+    },
+    "guide/assets/reservation.png": {
+      "bytes": 46625,
+      "sha256": "47a9ae32e5866132cdee7444164d953708152e6ceb3a345df6f698fce69a7ed0"
+    },
+    "guide/assets/shared_city.png": {
+      "bytes": 185950,
+      "sha256": "f9de99c89f89e7bed6c053c90eef7b6a9907ad494dc6af580e0ca7e0fdb9e7c5"
+    },
+    "guide/assets/shared_turn.png": {
+      "bytes": 144540,
+      "sha256": "5972a1c4d1935154d44b8f614f3183feaff1ea164ee04b2462a54b576678bd97"
+    },
+    "guide/assets/single_gamble.png": {
+      "bytes": 212423,
+      "sha256": "c768a2128a8b58005481c7bfa4c274cb6ca93fa9be4cc0e31370b2b50f07fdcc"
+    },
+    "guide/assets/stance.png": {
+      "bytes": 142693,
+      "sha256": "3153f4ed641e54f3ceadd02ecc7d5d06041c64a3e20f346791b2c1bec3207f94"
+    },
+    "guide/assets/target.png": {
+      "bytes": 1338256,
+      "sha256": "9e8cf5aa336abab75073839e37fb892ba5b9d5bbd2a50588164a0931713be36e"
+    },
+    "guide/assets/tarot.png": {
+      "bytes": 143941,
+      "sha256": "f83b57d2180d72e7b07bd7daa98d2d1e6067fb4d9d89b3513a551c453854b8be"
+    },
+    "guide/assets/tarot_workshop.png": {
+      "bytes": 146902,
+      "sha256": "b510c3fa09831e7add3560176dad8cb266833319550bc7318c24f2e290bbc25c"
+    },
+    "guide/assets/traps.png": {
+      "bytes": 1298014,
+      "sha256": "bac65cd97602cdb4457c40bf0fdf7d3ef6524ea0b1a25cf80e3d1b7a5e395755"
+    }
+  }
+}
