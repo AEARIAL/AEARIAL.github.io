@@ -26,8 +26,8 @@
     #display-menu button[aria-pressed="true"] { background: #20554f; border-color: #88dec9; }
     [hidden] { display: none !important; }
   </style>
-  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-b0a006c.icon.png" />
-<link rel="apple-touch-icon" href="kot-b0a006c.apple-touch-icon.png"/>
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-43c8141.icon.png" />
+<link rel="apple-touch-icon" href="kot-43c8141.apple-touch-icon.png"/>
 
 </head>
 <body>
@@ -37,6 +37,34 @@
 <script>
 (function () {
   'use strict';
+  // BEGIN KOT PACK LOADER
+  async function startPackedGame(engine, config, parts, onProgress) {
+    if (!parts) return engine.startGame({onProgress});
+    const pack = config.mainPack || config.executable + '.pck';
+    const download = async () => {
+      const bytes = new Uint8Array(parts.bytes);
+      let offset = 0;
+      onProgress(0, parts.bytes);
+      for (const part of parts.files) {
+        const response = await fetch(part.name);
+        if (!response.ok) throw new Error('ゲームデータの読み込みに失敗しました。再読み込みしてください。');
+        const chunk = new Uint8Array(await response.arrayBuffer());
+        if (chunk.length !== part.bytes || offset + chunk.length > bytes.length) throw new Error('ゲームデータが不完全です。再読み込みしてください。');
+        bytes.set(chunk, offset);
+        offset += chunk.length;
+        onProgress(offset, parts.bytes);
+      }
+      if (offset !== bytes.length) throw new Error('ゲームデータが不足しています。再読み込みしてください。');
+      const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+      const hash = Array.from(digest, n => n.toString(16).padStart(2, '0')).join('');
+      if (hash !== parts.sha256) throw new Error('ゲームデータの版が一致しません。再読み込みしてください。');
+      return bytes.buffer;
+    };
+    const [, buffer] = await Promise.all([engine.init(config.executable), download()]);
+    await engine.preloadFile(buffer, pack);
+    return engine.start({args:['--main-pack', pack, ...(config.args || [])]});
+  }
+  // END KOT PACK LOADER
   const url = new URL(location.href);
   let gameFrame = false;
   try { gameFrame = parent !== window && parent.document.documentElement.dataset.kotHost === 'true' && url.searchParams.get('kotFrame') === '1'; } catch (_) {}
@@ -44,18 +72,19 @@
     // The browser transforms iframe input, including touches and the virtual keyboard.
     // Godot keeps its normal canvas, 1080p viewport and coordinate calculations.
     const script = document.createElement('script');
-    script.src = 'kot-b0a006c.js';
+    script.src = 'kot-43c8141.js';
     script.onerror = () => fail('ゲームを読み込めませんでした。通信状況を確認して再読み込みしてください。');
     script.onload = () => {
-      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-b0a006c","experimentalVK":true,"fileSizes":{"kot-b0a006c.pck":103643808,"kot-b0a006c.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-43c8141","experimentalVK":true,"fileSizes":{"kot-43c8141.pck":135759440,"kot-43c8141.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
       const missing = Engine.getMissingFeatures({threads: false});
       if (missing.length) { fail('このブラウザーでは必要な機能が利用できません。\n' + missing.join('\n')); return; }
       const engine = new Engine(config);
-      engine.startGame({onProgress(current, total) {
+      const packParts = {"bytes":135759440,"sha256":"f5912809e1ad24f93862b9d3a4cc163fb377fe55fef29194419b2ee50f8ba399","files":[{"name":"kot-43c8141.pck.part0","bytes":50331648,"sha256":"a637c3c20714c2d86e3caecc8802439f668b8a2ebe2608576d2c7d962d104c87"},{"name":"kot-43c8141.pck.part1","bytes":50331648,"sha256":"f644007d8497b77baa70879101282a0eb31020ceeed7fe2223df778dea6ce5eb"},{"name":"kot-43c8141.pck.part2","bytes":35096144,"sha256":"7406a22438e4804dabfddb0d67b69d8a680919e82baf32cc54dc00496c4fb3a5"}]}; // KOT_PACK_PARTS
+      startPackedGame(engine, config, packParts, (current, total) => {
         const progress = document.getElementById('progress');
         if (total > 0) { progress.max = total; progress.value = current; }
         else { progress.removeAttribute('value'); }
-      }}).then(() => document.getElementById('loading').remove(), fail);
+      }).then(() => document.getElementById('loading').remove(), fail);
     };
     function fail(error) {
       console.error(error);

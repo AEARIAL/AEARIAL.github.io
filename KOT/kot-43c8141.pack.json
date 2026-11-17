@@ -1,0 +1,21 @@
+{
+  "bytes": 135759440,
+  "sha256": "f5912809e1ad24f93862b9d3a4cc163fb377fe55fef29194419b2ee50f8ba399",
+  "files": [
+    {
+      "name": "kot-43c8141.pck.part0",
+      "bytes": 50331648,
+      "sha256": "a637c3c20714c2d86e3caecc8802439f668b8a2ebe2608576d2c7d962d104c87"
+    },
+    {
+      "name": "kot-43c8141.pck.part1",
+      "bytes": 50331648,
+      "sha256": "f644007d8497b77baa70879101282a0eb31020ceeed7fe2223df778dea6ce5eb"
+    },
+    {
+      "name": "kot-43c8141.pck.part2",
+      "bytes": 35096144,
+      "sha256": "7406a22438e4804dabfddb0d67b69d8a680919e82baf32cc54dc00496c4fb3a5"
+    }
+  ]
+}
