@@ -1,0 +1,192 @@
+{
+  "release": "c7e44e8",
+  "sourceCommit": "c7e44e8bbec66079ef6022ae0c5d0fdd2da741eb",
+  "date": "2026-11-18",
+  "workerVersion": "54d7c4cc-8155-4e2a-871a-cf143bafb2cd",
+  "backend": "https://key-or-trap.aerial593285104138434358439.workers.dev",
+  "manualRemoved": true,
+  "validation": {
+    "parity": 3732,
+    "referenceUI": 1295,
+    "statusUI": 220,
+    "scrollUI": 17,
+    "catalogAndBoardUI": 125,
+    "scalingUI": 46,
+    "localWeb": {
+      "url": "http://127.0.0.1:4218/KOT/",
+      "canvas": {
+        "width": 1920,
+        "height": 1080
+      },
+      "packChunks": 3,
+      "errors": []
+    },
+    "liveWorker": {
+      "checks": 164,
+      "rooms": [
+        {
+          "jobs": [
+            "trapMaster",
+            "shoreWarden",
+            "gramis"
+          ],
+          "reachedDice": true,
+          "reconnected": true,
+          "requests": 59
+        },
+        {
+          "jobs": [
+            "bloomVeil",
+            "shoreWarden",
+            "trapMaster"
+          ],
+          "reachedDice": true,
+          "reconnected": true,
+          "requests": 121
+        }
+      ]
+    }
+  },
+  "files": {
+    "guide/assets/board.png": {
+      "bytes": 294695,
+      "sha256": "87bb8827c159d22c17c8d0293db1bec10d330dd8931f6e32739019253884f544"
+    },
+    "guide/assets/dice_order.png": {
+      "bytes": 143741,
+      "sha256": "dc74c729d51c1559fd1ff48d3c97558131a60aa75fa6e20e7511bd7f5bb01c02"
+    },
+    "guide/assets/event.png": {
+      "bytes": 107635,
+      "sha256": "50f2f17f6d96cc261ea1553f287483726e187d90946d30260605b2dd48d6b334"
+    },
+    "guide/assets/extra_actions.png": {
+      "bytes": 305618,
+      "sha256": "ceae211dc05c73ea26b715f6bb1843c9939cf61680616400faf9382ecb0c7490"
+    },
+    "guide/assets/guide.woff2": {
+      "bytes": 87696,
+      "sha256": "13602f85b46ff8afb99ee11f2e1d2b21ff0c8dfc4a7bde8c92ff889bf0e08a99"
+    },
+    "guide/assets/hud.png": {
+      "bytes": 294739,
+      "sha256": "58c002e9c5d0e072efce4cdd0f1b1fbb2fe8f35eb8544571d6485b92be0ef954"
+    },
+    "guide/assets/keys.png": {
+      "bytes": 448686,
+      "sha256": "6d3c5e5dba8fa4537484eae02120c74079c6ca22598c774bc21965f1df7b70e4"
+    },
+    "guide/assets/menu.png": {
+      "bytes": 103153,
+      "sha256": "3a8db4e8366bf5611f37e49f8cc65248282f1fa43686a011ec9694524d197d0e"
+    },
+    "guide/assets/OFL.txt": {
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    "guide/assets/practice_growth.png": {
+      "bytes": 105121,
+      "sha256": "302245438abbf31ccc01b59a7d171a8512178114caf72f472751a25f361a8893"
+    },
+    "guide/assets/reservation.png": {
+      "bytes": 485190,
+      "sha256": "d73a862ee79a1b52b43b13f45bdf4553e7469a798266439a5766c5ffe9832dba"
+    },
+    "guide/assets/shared_city.png": {
+      "bytes": 189489,
+      "sha256": "481ca5605a0c58ea5e42904a88933206b19afaf785b5ccc47487cd765faebf1c"
+    },
+    "guide/assets/shared_turn.png": {
+      "bytes": 210731,
+      "sha256": "268b61f1a9e34f38a493479eb672e3d3f5be088011cb8ba376c412941ecf5ecf"
+    },
+    "guide/assets/single_gamble.png": {
+      "bytes": 222443,
+      "sha256": "c9ba0856a6954af231dbb6f31af2ee519177261f7e3310a4dee4d0afbadaa22b"
+    },
+    "guide/assets/stance.png": {
+      "bytes": 166648,
+      "sha256": "fd1e495ceb1427de83e697b6d80604b0e297726d729f563252e04e29b371538a"
+    },
+    "guide/assets/target.png": {
+      "bytes": 472321,
+      "sha256": "ae8d7429713a3800f5c4c4a5d62f093d3578d2a28560ace5c43259e1d9399e77"
+    },
+    "guide/assets/tarot.png": {
+      "bytes": 260752,
+      "sha256": "95d1ead5cece0cb0d521a831d4fdb8869775f83f342c13228bca71997384be20"
+    },
+    "guide/assets/tarot_workshop.png": {
+      "bytes": 139596,
+      "sha256": "3edd03ce9ded5debf75c295b93a1f580ee45906c107af2b3dd10c52c64b938de"
+    },
+    "guide/assets/traps.png": {
+      "bytes": 439909,
+      "sha256": "b1d8d3ee5ed54cac79ae4e2bcf6b266cf0e55a54ed2231de0e3153be03d85522"
+    },
+    "guide/guide-data.json": {
+      "bytes": 25000,
+      "sha256": "b917ae323083fc63013b29a5aa5c5de35c9393941ef18e4692367d8621879703"
+    },
+    "guide/guide.css": {
+      "bytes": 8104,
+      "sha256": "90e8d10da0da949d6e6c95768427c04ae459238a0abdc3ed71cf7c44552039c0"
+    },
+    "guide/guide.js": {
+      "bytes": 5755,
+      "sha256": "5c41d4fc035f7d84c91a5d6b97af3f113b55271bc8dbb56f47414842cad6b66a"
+    },
+    "guide/index.html": {
+      "bytes": 4266,
+      "sha256": "4ec2a6717792c28e6b84d34ec60462a65cfde64465ec75ba59bdbdb72d5b0030"
+    },
+    "index.html": {
+      "bytes": 10996,
+      "sha256": "9b9e73e9619889d8811f8ba344946b8aef701715c6f20f29f54997b74c1c62f9"
+    },
+    "kot-c7e44e8.apple-touch-icon.png": {
+      "bytes": 11944,
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    "kot-c7e44e8.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "kot-c7e44e8.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "kot-c7e44e8.icon.png": {
+      "bytes": 5700,
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    "kot-c7e44e8.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "kot-c7e44e8.pack.json": {
+      "bytes": 602,
+      "sha256": "51e03b66ce78eaea542a47aef9d0204e47e32ec3f268bf4ff1114b97f4b02b58"
+    },
+    "kot-c7e44e8.pck.part0": {
+      "bytes": 50331648,
+      "sha256": "f9bb1ac4a99d3df71025b4ea8209b0beeef774f8a4c0eabb2abbfd207d869f5a"
+    },
+    "kot-c7e44e8.pck.part1": {
+      "bytes": 50331648,
+      "sha256": "0b2258dea95e75f887bce7c8d075e32b0f82edde575a4ca468395ad8bc63f0f0"
+    },
+    "kot-c7e44e8.pck.part2": {
+      "bytes": 38696784,
+      "sha256": "70b64ef0127a299c28f2ca29804e20e4da53b9ed1fb6d1c2f049b3cd4a94e214"
+    },
+    "kot-c7e44e8.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "kot-c7e44e8.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  }
+}
