@@ -1,0 +1,21 @@
+{
+  "bytes": 139376296,
+  "sha256": "6e5f8328470ae43ec1ee882d79c9ccc75caa1dcb738a0766d954478ddeb062a6",
+  "files": [
+    {
+      "name": "kot-19cd40c.pck.part0",
+      "bytes": 50331648,
+      "sha256": "46af82e592f485908ec50bd67ec2f346d73e6c455ad50d5b742cc84b7130b7d4"
+    },
+    {
+      "name": "kot-19cd40c.pck.part1",
+      "bytes": 50331648,
+      "sha256": "321a624b6e3e749201e03b39a6d660c062744d72e4fdb9a7290579fe151330a9"
+    },
+    {
+      "name": "kot-19cd40c.pck.part2",
+      "bytes": 38713000,
+      "sha256": "852851ca10d5291622e4e53fb161aa28f80bbe11851958a41451ed43d5e79fd7"
+    }
+  ]
+}

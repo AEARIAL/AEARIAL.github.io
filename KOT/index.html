@@ -26,8 +26,8 @@
     #display-menu button[aria-pressed="true"] { background: #20554f; border-color: #88dec9; }
     [hidden] { display: none !important; }
   </style>
-  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-b0625c3.icon.png" />
-<link rel="apple-touch-icon" href="kot-b0625c3.apple-touch-icon.png"/>
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-19cd40c.icon.png" />
+<link rel="apple-touch-icon" href="kot-19cd40c.apple-touch-icon.png"/>
 
 </head>
 <body>
@@ -72,14 +72,14 @@
     // The browser transforms iframe input, including touches and the virtual keyboard.
     // Godot keeps its normal canvas, 1080p viewport and coordinate calculations.
     const script = document.createElement('script');
-    script.src = 'kot-b0625c3.js';
+    script.src = 'kot-19cd40c.js';
     script.onerror = () => fail('ゲームを読み込めませんでした。通信状況を確認して再読み込みしてください。');
     script.onload = () => {
-      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-b0625c3","experimentalVK":true,"fileSizes":{"kot-b0625c3.pck":140093572,"kot-b0625c3.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-19cd40c","experimentalVK":true,"fileSizes":{"kot-19cd40c.pck":139376296,"kot-19cd40c.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
       const missing = Engine.getMissingFeatures({threads: false});
       if (missing.length) { fail('このブラウザーでは必要な機能が利用できません。\n' + missing.join('\n')); return; }
       const engine = new Engine(config);
-      const packParts = {"bytes":140093572,"sha256":"f8b1516a6a04fa045dd5f08d7fa24d9455a5e2f7e041f2c6dc1090101d5d448f","files":[{"name":"kot-b0625c3.pck.part0","bytes":50331648,"sha256":"ae99502eecce3440991af2a6fb697d3d9e8055b5087c3c87b9b759c91ad2e216"},{"name":"kot-b0625c3.pck.part1","bytes":50331648,"sha256":"017a573aeb976bdce1ef3018728287f1b832fab3eb8890b22526b84c8d23e96b"},{"name":"kot-b0625c3.pck.part2","bytes":39430276,"sha256":"09f1728380222ffd831b0f787aa53f82fea9a1485d84d61f299ed883e1038d5d"}]}; // KOT_PACK_PARTS
+      const packParts = {"bytes":139376296,"sha256":"6e5f8328470ae43ec1ee882d79c9ccc75caa1dcb738a0766d954478ddeb062a6","files":[{"name":"kot-19cd40c.pck.part0","bytes":50331648,"sha256":"46af82e592f485908ec50bd67ec2f346d73e6c455ad50d5b742cc84b7130b7d4"},{"name":"kot-19cd40c.pck.part1","bytes":50331648,"sha256":"321a624b6e3e749201e03b39a6d660c062744d72e4fdb9a7290579fe151330a9"},{"name":"kot-19cd40c.pck.part2","bytes":38713000,"sha256":"852851ca10d5291622e4e53fb161aa28f80bbe11851958a41451ed43d5e79fd7"}]}; // KOT_PACK_PARTS
       startPackedGame(engine, config, packParts, (current, total) => {
         const progress = document.getElementById('progress');
         if (total > 0) { progress.max = total; progress.value = current; }
