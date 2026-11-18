@@ -1,0 +1,21 @@
+{
+  "bytes": 140065068,
+  "sha256": "2ba6ba4960373dd615547546a8c79053c4b81db890f9b90f2559930935238198",
+  "files": [
+    {
+      "name": "kot-e78a59d.pck.part0",
+      "bytes": 50331648,
+      "sha256": "897a9f4301b91b8c1d59569e9a7da72b8d56d5e4d7bd49b39b59ccd7a650bd5f"
+    },
+    {
+      "name": "kot-e78a59d.pck.part1",
+      "bytes": 50331648,
+      "sha256": "017a573aeb976bdce1ef3018728287f1b832fab3eb8890b22526b84c8d23e96b"
+    },
+    {
+      "name": "kot-e78a59d.pck.part2",
+      "bytes": 39401772,
+      "sha256": "1d836726e319ed0fd284207c25e93821d924d7291a162c04d868708fdf490ea3"
+    }
+  ]
+}
