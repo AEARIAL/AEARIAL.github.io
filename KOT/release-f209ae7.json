@@ -1,0 +1,158 @@
+{
+  "release": "f209ae7",
+  "sourceCommit": "f209ae7737d2a830f4284867c250876dabd8d385",
+  "date": "2026-11-19",
+  "workerVersion": "c74f62d5-9b46-4919-810f-8c77dd90bbba",
+  "backend": "https://key-or-trap.aerial593285104138434358439.workers.dev",
+  "manualRemoved": true,
+  "files": {
+    "guide/assets/board.png": {
+      "bytes": 272951,
+      "sha256": "e3ff07b099d395e5c434248f6611f9c8f0b8b18ca894e85add6b5058e963cd60"
+    },
+    "guide/assets/character.png": {
+      "bytes": 327024,
+      "sha256": "5ab563940d9eef3a3d261954ac1044e389fcfb637bd2263c6305c54bd2b56443"
+    },
+    "guide/assets/dice_order.png": {
+      "bytes": 143741,
+      "sha256": "dc74c729d51c1559fd1ff48d3c97558131a60aa75fa6e20e7511bd7f5bb01c02"
+    },
+    "guide/assets/event.png": {
+      "bytes": 106998,
+      "sha256": "36ff81e1ac7b828df585a8be236f34457c6d8cdde92ada6ef069402aa9cceeed"
+    },
+    "guide/assets/extra_actions.png": {
+      "bytes": 290971,
+      "sha256": "3b208ff538af926586ff0d794d8bb9bea7745124cd9d16a7fd105e841a18d838"
+    },
+    "guide/assets/guide.woff2": {
+      "bytes": 87460,
+      "sha256": "11eb4a29f731191eb14785d947b3686195e53059081d66c43a530d1fe937d451"
+    },
+    "guide/assets/hud.png": {
+      "bytes": 272870,
+      "sha256": "818389187c60b4791585bf7379047a9e1aa234a2ec8d4c8797f5087e75c10705"
+    },
+    "guide/assets/jobs.png": {
+      "bytes": 438409,
+      "sha256": "67aaf5a92f6a49798f2e367fefb5c78280fb754d83c40c95eb037a48dedc0632"
+    },
+    "guide/assets/keys.png": {
+      "bytes": 416588,
+      "sha256": "bc24bcdd2ab10399a77b0e2a0e70c59f77eb75f0cce9192b192bbf92716ba4a4"
+    },
+    "guide/assets/menu.png": {
+      "bytes": 102025,
+      "sha256": "0d1230b8eaa9dec6dc1f1f2e32e6a6e81fb4d3d8597d95d2d86244cae65f1d98"
+    },
+    "guide/assets/OFL.txt": {
+      "bytes": 4408,
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    "guide/assets/reservation.png": {
+      "bytes": 449319,
+      "sha256": "a9a4c59e96a504996fa2fe9ba9ae222547cbb15c71c08684287b77ae3ef89c9d"
+    },
+    "guide/assets/reservation_cancel.png": {
+      "bytes": 263372,
+      "sha256": "52b77c92ecbb058428b6f182c7d5c5a76f2a5101f971cc29d5fe48f949ba9966"
+    },
+    "guide/assets/shared_city.png": {
+      "bytes": 201274,
+      "sha256": "0817c878da99d8e585eac2109c9d02b444f5712855d5709474b08c56eac64997"
+    },
+    "guide/assets/shared_turn.png": {
+      "bytes": 210731,
+      "sha256": "268b61f1a9e34f38a493479eb672e3d3f5be088011cb8ba376c412941ecf5ecf"
+    },
+    "guide/assets/single_gamble.png": {
+      "bytes": 231754,
+      "sha256": "4f0e7e37ce6d7ab5c776c44a93ce51995181235cff38303a8182390d19202682"
+    },
+    "guide/assets/stance.png": {
+      "bytes": 190342,
+      "sha256": "d0cd850072fe7fe64bb9fdaef4e01568fe77609ea94c4c6f4c7c7d72843c1f47"
+    },
+    "guide/assets/target.png": {
+      "bytes": 438169,
+      "sha256": "6dc5cae0427b1d3784fd360c1727fb178c56c5bc4d31f2576e40c679435edaef"
+    },
+    "guide/assets/tarot.png": {
+      "bytes": 163259,
+      "sha256": "756925b54741a59d66cdb56dceb6dea68dae5498cb5e0343114068bd138bd39e"
+    },
+    "guide/assets/tarot_workshop.png": {
+      "bytes": 144186,
+      "sha256": "e2cfe5231a62df1a305d685174109a6100d30b5f34fdcea1834f5c5bcc24fcc7"
+    },
+    "guide/assets/traps.png": {
+      "bytes": 426104,
+      "sha256": "216dd051a3b25cf24821203d03408d0de31a516bdd16608f16855eac3cbe4ea1"
+    },
+    "guide/guide-data.json": {
+      "bytes": 25512,
+      "sha256": "b781dd1ab4f55c434d390dccb73b83536e2cc2eab236de023ded9ccb8b734473"
+    },
+    "guide/guide.css": {
+      "bytes": 8104,
+      "sha256": "90e8d10da0da949d6e6c95768427c04ae459238a0abdc3ed71cf7c44552039c0"
+    },
+    "guide/guide.js": {
+      "bytes": 5755,
+      "sha256": "5c41d4fc035f7d84c91a5d6b97af3f113b55271bc8dbb56f47414842cad6b66a"
+    },
+    "guide/index.html": {
+      "bytes": 4293,
+      "sha256": "ca654b22abddde4e7b0bbd5e556cba0d70c1a40ceec0645a715cea901efa95c1"
+    },
+    "index.html": {
+      "bytes": 10996,
+      "sha256": "c4aa664c65935a9d9414ee07f8e6958f7d1ed59ba9e5608f42c1d5492baadef5"
+    },
+    "kot-f209ae7.apple-touch-icon.png": {
+      "bytes": 11944,
+      "sha256": "01d4f63e525941e06ce74f5187dad030d20a8d52a07ce365ae4e94af97a3b1f5"
+    },
+    "kot-f209ae7.audio.position.worklet.js": {
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    "kot-f209ae7.audio.worklet.js": {
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    "kot-f209ae7.icon.png": {
+      "bytes": 5700,
+      "sha256": "ad3c35ad0facf487c618204bd98db543034fc95224eadc7f08c7a9ff38d5b3b5"
+    },
+    "kot-f209ae7.js": {
+      "bytes": 279815,
+      "sha256": "33c94cb3175f3333b82e2a3be5e8e86f77986f0aa2042b1631f6367a4e5bb6ba"
+    },
+    "kot-f209ae7.pack.json": {
+      "bytes": 602,
+      "sha256": "4d04e43a1c0e2f371c986ff8602f268453498684272d3f2c904d7e3ac4558bb1"
+    },
+    "kot-f209ae7.pck.part0": {
+      "bytes": 50331648,
+      "sha256": "3580a26136e301e4168943a872a95863676893b7b041f860fe6de555db3c97e1"
+    },
+    "kot-f209ae7.pck.part1": {
+      "bytes": 50331648,
+      "sha256": "c292569e9bdfac38f9c79e6f84f3b7d4c3054d523e8bf34f512d9782b533bdf6"
+    },
+    "kot-f209ae7.pck.part2": {
+      "bytes": 39514532,
+      "sha256": "c19c310beb56050bef4e4c1a8660c0b7457f3f1b96ae420de3750c8b0667c443"
+    },
+    "kot-f209ae7.png": {
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    "kot-f209ae7.wasm": {
+      "bytes": 39514754,
+      "sha256": "fc74679e3b97f76878947fcd4fbe1268cbfa6188182a2e33bbc3f5dc9bfa57d0"
+    }
+  }
+}
