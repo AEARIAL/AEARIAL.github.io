@@ -1,163 +1,316 @@
+<!-- ブラウザーがHTML標準モードでページを描画できるようにする。 -->
 <!DOCTYPE html>
+<!-- ページを組み立てるとき、html 要素を配置する。 -->
 <html lang="ja">
+<!-- ページを組み立てるとき、head 要素を配置する。 -->
 <head>
+  <!-- ブラウザーに utf-8 の設定を伝える。 -->
   <meta charset="utf-8">
+  <!-- ブラウザーに viewport の設定を伝える。 -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- ブラウザーに theme-color の設定を伝える。 -->
   <meta name="theme-color" content="#0c1827">
+  <!-- 「Key Or Trap」を表示するため、title 要素を配置する。 -->
   <title>Key Or Trap</title>
+  <!-- ページ内の表示スタイルを定義する。 -->
   <style>
+    /* * に一致する要素の box-sizing を設定する。 */
     * { box-sizing: border-box; }
+    /* html, body に一致する要素の margin・width・height・overflow・background を設定する。 */
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #080f19; color: #eff4fa; }
+    /* body に一致する要素の font-family を設定する。 */
     body { font-family: sans-serif; }
+    /* #canvas に一致する要素の display・margin・padding・border・touch-action を設定する。 */
     #canvas { display: block; margin: 0; padding: 0; border: 0; touch-action: none; }
+    /* #canvas:focus に一致する要素の outline を設定する。 */
     #canvas:focus { outline: none; }
+    /* #loading に一致する要素の position・inset・display・place-content・gap を設定する。 */
     #loading { position: fixed; inset: 0; display: grid; place-content: center; gap: 18px; padding: 24px; background: #0c1827; text-align: center; }
+    /* #loading progress に一致する要素の width・accent-color を設定する。 */
     #loading progress { width: min(320px, 75vw); accent-color: #86dacb; }
+    /* #notice に一致する要素の max-width・white-space・line-height を設定する。 */
     #notice { max-width: 640px; white-space: pre-wrap; line-height: 1.7; }
+    /* #stage に一致する要素の position・inset・overflow を設定する。 */
     #stage { position: absolute; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); overflow: hidden; }
+    /* #game-frame に一致する要素の position・border・display・transform-origin・background を設定する。 */
     #game-frame { position: absolute; border: 0; display: block; transform-origin: center; background: #080f19; }
+    /* #display-bar に一致する要素の position・bottom・left・right・height を設定する。 */
     #display-bar { position: absolute; bottom: max(4px, env(safe-area-inset-bottom)); left: max(8px, env(safe-area-inset-left)); right: max(8px, env(safe-area-inset-right)); height: 44px; display: flex; justify-content: center; gap: 8px; align-items: center; font-size: 14px; }
+    /* #display-bar button, #display-menu button に一致する要素の color・background・border・border-radius・padding を設定する。 */
     #display-bar button, #display-menu button { color: #eff4fa; background: #183146; border: 1px solid #647b87; border-radius: 8px; padding: 8px 14px; min-height: 44px; font: inherit; cursor: pointer; }
+    /* #display-bar button:focus-visible, #display-menu butto… に一致する要素の outline・outline-offset を設定する。 */
     #display-bar button:focus-visible, #display-menu button:focus-visible { outline: 3px solid #f0d28c; outline-offset: 2px; }
+    /* #display-menu に一致する要素の position・bottom・left・right・max-width を設定する。 */
     #display-menu { position: absolute; bottom: calc(max(4px, env(safe-area-inset-bottom)) + 52px); left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right)); max-width: 480px; margin: auto; padding: 18px; background: #102638; border: 1px solid #c2a76c; border-radius: 14px; box-shadow: 0 8px 32px #0009; z-index: 2; }
+    /* #display-menu h2 に一致する要素の font-size・margin・color を設定する。 */
     #display-menu h2 { font-size: 18px; margin: 0 0 12px; color: #f0d28c; }
+    /* #display-menu p に一致する要素の margin・font-size・line-height を設定する。 */
     #display-menu p { margin: 12px 0; font-size: 14px; line-height: 1.6; }
+    /* #display-menu .choices に一致する要素の display・gap を設定する。 */
     #display-menu .choices { display: grid; gap: 8px; }
+    /* #display-menu button[aria-pressed="true"] に一致する要素の background・border-color を設定する。 */
     #display-menu button[aria-pressed="true"] { background: #20554f; border-color: #88dec9; }
+    /* [hidden] に一致する要素の display を設定する。 */
     [hidden] { display: none !important; }
+  /* ここまでのスタイルを使ってページ本文を描画する。 */
   </style>
-  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-0a25f75.icon.png" />
-<link rel="apple-touch-icon" href="kot-0a25f75.apple-touch-icon.png"/>
+  <!-- Webエクスポート時にGodotが生成する内容をこの位置に展開する。 -->
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-8353391.icon.png" />
+<link rel="apple-touch-icon" href="kot-8353391.apple-touch-icon.png"/>
 
+<!-- head 要素の内容をここで閉じる。 -->
 </head>
+<!-- ページを組み立てるとき、body 要素を配置する。 -->
 <body>
+<!-- 「canvas」の表示領域として、canvas 要素を配置する。 -->
 <canvas id="canvas" tabindex="0">このブラウザーではゲーム画面を表示できません。</canvas>
+<!-- 「loading」の表示領域として、div 要素を配置する。 -->
 <div id="loading" role="status"><div id="notice">時計塔を準備しています</div><progress id="progress" aria-label="ゲームの読み込み"></progress></div>
+<!-- ページを組み立てるとき、noscript 要素を配置する。 -->
 <noscript>プレイするにはJavaScriptを有効にしてください。</noscript>
+<!-- このページの操作に必要なスクリプトを読み込む。 -->
 <script>
+// Web画面の起動・操作時、(function () {。
 (function () {
+  // Web画面の起動・操作時、「use strict」。
   'use strict';
   // BEGIN KOT PACK LOADER
+  // 呼び出し時にstartPackedGameの処理を開始する。
   async function startPackedGame(engine, config, parts, onProgress) {
+    // startPackedGameの実行時、条件「partsが偽」のとき、ローカルのゲーム処理のstartGameの結果（項目（onProgress）を持つデータ）を呼び出し元へ返す。
     if (!parts) return engine.startGame({onProgress});
+    // startPackedGameの実行時、packに設定のmainPack、または（設定のexecutable + 「.pck」）を保持する。
     const pack = config.mainPack || config.executable + '.pck';
+    // downloadの実行時、downloadを呼び出せるように、引数と処理を定義する。
     const download = async () => {
+      // downloadの実行時、bytesにUint8Arrayの新しいインスタンスを保持する。
       const bytes = new Uint8Array(parts.bytes);
+      // downloadの実行時、offsetに0を保持する。
       let offset = 0;
+      // downloadの実行時、onProgressを実行する。渡す値は0・partsのbytes。
       onProgress(0, parts.bytes);
+      // downloadの実行時、partsのfilesの各項目について、以下を繰り返す。
       for (const part of parts.files) {
+        // downloadの実行時、応答にfetchの結果（partの名前）の完了結果を保持する。
         const response = await fetch(part.name);
+        // downloadの実行時、条件「応答のokが偽」のとき、異常として「ゲームデータの読み込みに失敗しました。再読み込みしてください。」を通知して中断する。
         if (!response.ok) throw new Error('ゲームデータの読み込みに失敗しました。再読み込みしてください。');
+        // downloadの実行時、chunkにUint8Arrayの新しいインスタンスを保持する。
         const chunk = new Uint8Array(await response.arrayBuffer());
+        // downloadの実行時、条件「chunkの要素数がpartのbytesと異なる、または（offset + chunkの要素数）がbytesの要素数より大きい」のとき、異常として「ゲームデータが不完全です。再読み込みしてください。」を通知して中断する。
         if (chunk.length !== part.bytes || offset + chunk.length > bytes.length) throw new Error('ゲームデータが不完全です。再読み込みしてください。');
+        // downloadの実行時、bytesのchunkにoffsetを記録する。
         bytes.set(chunk, offset);
+        // downloadの実行時、offsetにchunkの要素数を加える。
         offset += chunk.length;
+        // downloadの実行時、onProgressを実行する。渡す値はoffset・partsのbytes。
         onProgress(offset, parts.bytes);
+      // downloadの実行時で使う処理範囲をここで閉じる。
       }
+      // downloadの実行時、条件「offsetがbytesの要素数と異なる」のとき、異常として「ゲームデータが不足しています。再読み込みしてください。」を通知して中断する。
       if (offset !== bytes.length) throw new Error('ゲームデータが不足しています。再読み込みしてください。');
+      // downloadの実行時、digestにUint8Arrayの新しいインスタンスを保持する。
       const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+      // downloadの実行時、hashにArrayのfromの結果（digest・引数 個数 を使う処理）のjoinの結果（「」）を保持する。
       const hash = Array.from(digest, n => n.toString(16).padStart(2, '0')).join('');
+      // downloadの実行時、条件「hashがpartsのsha256と異なる」のとき、異常として「ゲームデータの版が一致しません。再読み込みしてください。」を通知して中断する。
       if (hash !== parts.sha256) throw new Error('ゲームデータの版が一致しません。再読み込みしてください。');
+      // downloadの実行時、bytesのbufferを呼び出し元へ返す。
       return bytes.buffer;
+    // downloadの実行時で使う処理範囲をここで閉じる。
     };
+    // startPackedGameの実行時、[, buffer]にPromiseのallの結果（一覧［ローカルのゲーム処理のinitの結果（設定のexecutable）・downloadの結果］）の完了結果を保持する。
     const [, buffer] = await Promise.all([engine.init(config.executable), download()]);
+    // startPackedGameの実行時、ローカルのゲーム処理のpreloadFileを実行する。渡す値はbuffer・pack。完了するまで次の処理を待つ。
     await engine.preloadFile(buffer, pack);
+    // startPackedGameの実行時、ローカルのゲーム処理のstartの結果（項目（起動引数）を持つデータ）を呼び出し元へ返す。
     return engine.start({args:['--main-pack', pack, ...(config.args || [])]});
+  // startPackedGameの実行時で使う処理範囲をここで閉じる。
   }
   // END KOT PACK LOADER
+  // Web画面の起動・操作時、URLにURLの新しいインスタンスを保持する。
   const url = new URL(location.href);
+  // Web画面の起動・操作時、gameFrameに偽を保持する。
   let gameFrame = false;
+  // Web画面の起動・操作時、gameFrameをparentがウィンドウと異なる、かつparentのdocumentのdocumentElementのdatasetのkotHostが「有効」と等しい、かつURLのsearchParamsの「kotFrame」が「1」と等しいに更新する。
   try { gameFrame = parent !== window && parent.document.documentElement.dataset.kotHost === 'true' && url.searchParams.get('kotFrame') === '1'; } catch (_) {}
+  // Web画面の起動・操作時、条件「gameFrame」のとき、以下の処理に進む。
   if (gameFrame) {
     // The browser transforms iframe input, including touches and the virtual keyboard.
     // Godot keeps its normal canvas, 1080p viewport and coordinate calculations.
+    // Web画面の起動・操作時、scriptにdocumentのcreateElementの結果（「script」）を保持する。
     const script = document.createElement('script');
-    script.src = 'kot-0a25f75.js';
+    // Web画面の起動・操作時、scriptの取得元を「kot-8353391.js」に更新する。
+    script.src = 'kot-8353391.js';
+    // Web画面の起動・操作時、scriptのonerrorを引数 を使う処理に更新する。
     script.onerror = () => fail('ゲームを読み込めませんでした。通信状況を確認して再読み込みしてください。');
+    // Web画面の起動・操作時、scriptのonloadを引数 を使う処理に更新する。
     script.onload = () => {
-      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-0a25f75","experimentalVK":true,"fileSizes":{"kot-0a25f75.pck":140173644,"kot-0a25f75.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      // Web画面の起動・操作時、設定に{"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-8353391","experimentalVK":true,"fileSizes":{"kot-8353391.pck":149120280,"kot-8353391.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4}を保持する。
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-8353391","experimentalVK":true,"fileSizes":{"kot-8353391.pck":149120280,"kot-8353391.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      // Web画面の起動・操作時、消失中にEngineのgetMissingFeaturesの結果（項目（threads）を持つデータ）を保持する。
       const missing = Engine.getMissingFeatures({threads: false});
+      // Web画面の起動・操作時、条件「消失中の要素数」のとき、以下の処理に進む。
       if (missing.length) { fail('このブラウザーでは必要な機能が利用できません。\n' + missing.join('\n')); return; }
+      // Web画面の起動・操作時、ローカルのゲーム処理にEngineの新しいインスタンスを保持する。
       const engine = new Engine(config);
-      const packParts = {"bytes":140173644,"sha256":"3539459fd4710b81080f652fb33b6c5f5ed28069e5a95cbe532aa61192ec626a","files":[{"name":"kot-0a25f75.pck.part0","bytes":50331648,"sha256":"646e2608e0bb03dcb41b07d2c0c11df5cdc1be6a5b5213abc9934e007c88d768"},{"name":"kot-0a25f75.pck.part1","bytes":50331648,"sha256":"1107dd361d5170e565a3cb8792248e00d6516a92c393fd3fc640de43dd8cf795"},{"name":"kot-0a25f75.pck.part2","bytes":39510348,"sha256":"581b698db9d95bfa3d7298194083a111e44efcb5287139c7a0d9c6d428c8c859"}]}; // KOT_PACK_PARTS
+      // Web画面の起動・操作時、packPartsに値なしを保持する。
+      const packParts = {"bytes":149120280,"sha256":"0a439eb19edec60cd7628ff352fe19bb23635384a20423080faf77a97ac87079","files":[{"name":"kot-8353391.pck.part0","bytes":50331648,"sha256":"6b64ee637251ab12bf694c621f694e3d988c159fa0a04408afe967783801ec52"},{"name":"kot-8353391.pck.part1","bytes":50331648,"sha256":"887aa453dec08f7a28040796766ab40803984445a84ca5783b3f7afc8c3a3437"},{"name":"kot-8353391.pck.part2","bytes":48456984,"sha256":"8ec02589394a012b2ec063f7cd394a83ce4ba5941ecfa9843bba1aa883f344cc"}]}; // KOT_PACK_PARTS
+      // Web画面の起動・操作時、startPackedGameの結果（ローカルのゲーム処理・設定・packParts・引数 現在・合計 を使う処理）のthenを実行する。渡す値は引数 を使う処理・fail。
       startPackedGame(engine, config, packParts, (current, total) => {
+        // Web画面の起動・操作時、progressにdocumentのgetElementByIdの結果（「progress」）を保持する。
         const progress = document.getElementById('progress');
+        // Web画面の起動・操作時、条件「合計が0より大きい」のとき、以下の処理に進む。
         if (total > 0) { progress.max = total; progress.value = current; }
+        // Web画面の起動・操作時、progressのremoveAttributeを実行する。渡す値は「value」。
         else { progress.removeAttribute('value'); }
+      // Web画面の起動・操作時、}).then(() =＞ document.getElementById('loading').remove(), fail)。
       }).then(() => document.getElementById('loading').remove(), fail);
+    // inlineで使う処理範囲をここで閉じる。
     };
+    // 呼び出し時にfailの処理を開始する。
     function fail(error) {
+      // failの実行時、consoleのerrorを実行する。渡す値はエラー。
       console.error(error);
+      // failの実行時、documentのgetElementByIdの結果（「通知」）のtextContentを条件「エラーの型が「string」と等しい」に応じてエラーまたは「起動できませんでした。再読み込みしてください。」に更新する。
       document.getElementById('notice').textContent = typeof error === 'string' ? error : '起動できませんでした。再読み込みしてください。';
+      // failの実行時、documentのgetElementByIdの結果（「progress」）の非公開情報を真に更新する。
       document.getElementById('progress').hidden = true;
+    // failの実行時で使う処理範囲をここで閉じる。
     }
+    // Web画面の起動・操作時、documentのbodyにscriptを追加する。
     document.body.append(script);
+    // Web画面の起動・操作時、この時点で呼び出し元に戻る。
     return;
+  // 条件「gameFrame」で使う処理範囲をここで閉じる。
   }
 
+  // Web画面の起動・操作時、documentのdocumentElementのdatasetのkotHostを「有効」に更新する。
   document.documentElement.dataset.kotHost = 'true';
+  // Web画面の起動・操作時、documentのgetElementByIdの結果（「canvas」）のremoveを実行する。
   document.getElementById('canvas').remove();
+  // Web画面の起動・操作時、documentのgetElementByIdの結果（「loading」）のremoveを実行する。
   document.getElementById('loading').remove();
+  // Web画面の起動・操作時、storageKeyに「kot.display.rotation.v1」を保持する。
   const storageKey = 'kot.display.rotation.v1';
+  // Web画面の起動・操作時、validModesに一覧［「right」・「left」・「off」］を保持する。
   const validModes = ['right', 'left', 'off'];
+  // Web画面の起動・操作時、modeに「right」を保持する。
   let mode = 'right';
+  // Web画面の起動・操作時、savedにlocalStorageに保存したstorageKeyを保持する。条件「validModesにsavedが含まれる」のとき、modeをsavedに更新する。
   try { const saved = localStorage.getItem(storageKey); if (validModes.includes(saved)) mode = saved; } catch (_) {}
+  // Web画面の起動・操作時、stageにdocumentのcreateElementの結果（「main」）を保持する。
   const stage = document.createElement('main');
+  // Web画面の起動・操作時、stageの識別子を「stage」に更新する。
   stage.id = 'stage';
+  // Web画面の起動・操作時、フレームにdocumentのcreateElementの結果（「iframe」）を保持する。
   const frame = document.createElement('iframe');
+  // Web画面の起動・操作時、フレームの識別子を「game-frame」に更新する。
   frame.id = 'game-frame';
+  // Web画面の起動・操作時、フレームの見出しを「Key Or Trap ゲーム画面」に更新する。
   frame.title = 'Key Or Trap ゲーム画面';
+  // Web画面の起動・操作時、フレームのallowを「autoplay; fullscreen; clipboard-write」に更新する。
   frame.allow = 'autoplay; fullscreen; clipboard-write';
+  // Web画面の起動・操作時、フレームのallowFullscreenを真に更新する。
   frame.allowFullscreen = true;
+  // Web画面の起動・操作時、URLのsearchParamsの「kotFrame」に「1」を記録する。
   url.searchParams.set('kotFrame', '1');
+  // Web画面の起動・操作時、フレームの取得元をURLのhrefに更新する。
   frame.src = url.href;
+  // Web画面の起動・操作時、stageにフレームを追加する。
   stage.append(frame);
+  // Web画面の起動・操作時、documentのbodyにstageを追加する。
   document.body.append(stage);
+  // Web画面の起動・操作時、barにdocumentのcreateElementの結果（「nav」）を保持する。
   const bar = document.createElement('nav');
+  // Web画面の起動・操作時、barの識別子を「display-bar」に更新する。
   bar.id = 'display-bar';
+  // Web画面の起動・操作時、barのsetAttributeを実行する。渡す値は「aria-label」・「画面表示」。
   bar.setAttribute('aria-label', '画面表示');
+  // Web画面の起動・操作時、barのinnerHTMLを「＜button id="display-toggle" aria-expanded="false"…」に更新する。
   bar.innerHTML = '<button id="display-toggle" aria-expanded="false" aria-controls="display-menu">画面表示</button><span id="display-state"></span>';
+  // Web画面の起動・操作時、documentのbodyにbarを追加する。
   document.body.append(bar);
+  // Web画面の起動・操作時、menuにdocumentのcreateElementの結果（「section」）を保持する。
   const menu = document.createElement('section');
+  // Web画面の起動・操作時、menuの識別子を「display-menu」に更新する。
   menu.id = 'display-menu';
+  // Web画面の起動・操作時、menuの非公開情報を真に更新する。
   menu.hidden = true;
+  // Web画面の起動・操作時、menuのsetAttributeを実行する。渡す値は「aria-label」・「画面の向き」。
   menu.setAttribute('aria-label', '画面の向き');
+  // Web画面の起動・操作時、menuのinnerHTMLを「＜h2＞縦画面での表示＜/h2＞＜div class="choices"＞＜button data…」に更新する。
   menu.innerHTML = '<h2>縦画面での表示</h2><div class="choices"><button data-mode="right">右へ回して大きく表示</button><button data-mode="left">左へ回して大きく表示</button><button data-mode="off">回転しない</button></div><p>端末を横にすると通常の横画面に戻ります。対戦はそのまま続けられます。</p><button id="display-close">閉じる</button>';
+  // Web画面の起動・操作時、documentのbodyにmenuを追加する。
   document.body.append(menu);
+  // Web画面の起動・操作時、toggleにdocumentのgetElementByIdの結果（「display-toggle」）を保持する。
   const toggle = document.getElementById('display-toggle');
+  // Web画面の起動・操作時、coarseにmatchMediaの結果（「(pointer: coarse)」）を保持する。
   const coarse = matchMedia('(pointer: coarse)');
+  // Web画面の起動・操作時、rotatedに偽を保持する。
   let rotated = false;
+  // menuの非公開情報を真に更新する。toggleのsetAttributeを実行する。渡す値は「aria-expanded」・「無効」。
   function closeMenu() { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); }
+  // 呼び出し時に画面配置の処理を開始する。
   function layout() {
     // A desktop window remains unchanged. Touch-capable narrow portrait windows
     // can rotate, while tablets/phones in landscape always use the normal layout.
+    // layoutの実行時、touchにcoarseのmatches、またはnavigatorのmaxTouchPointsが0より大きいを保持する。
     const touch = coarse.matches || navigator.maxTouchPoints > 0;
+    // layoutの実行時、barの非公開情報をtouchが偽に更新する。
     bar.hidden = !touch;
+    // layoutの実行時、条件「touchが偽」のとき、closeMenuを実行する。
     if (!touch) closeMenu();
+    // layoutの実行時、stageの外観のbottomを条件「touch」に応じて「calc(env(safe-area-inset-bottom) + 52px)」または「env(safe-area-inset-bottom)」に更新する。
     stage.style.bottom = touch ? 'calc(env(safe-area-inset-bottom) + 52px)' : 'env(safe-area-inset-bottom)';
+    // layoutの実行時、幅にstageのclientWidthを保持する。高さにstageのclientHeightを保持する。
     const width = stage.clientWidth, height = stage.clientHeight;
+    // layoutの実行時、rotatedをtouch、かつmodeが「off」と異なる、かつinnerHeightがinnerWidthより大きいに更新する。
     rotated = touch && mode !== 'off' && innerHeight > innerWidth;
+    // layoutの実行時、wに条件「rotated」に応じて高さまたは幅を保持する。hに条件「rotated」に応じて幅または高さを保持する。
     const w = rotated ? height : width, h = rotated ? width : height;
+    // layoutの実行時、フレームの外観の幅を（w + 「px」）に更新する。フレームの外観の高さを（h + 「px」）に更新する。
     frame.style.width = w + 'px'; frame.style.height = h + 'px';
+    // layoutの実行時、フレームの外観の左端を（（（幅 - w） / 2） + 「px」）に更新する。フレームの外観のtopを（（（高さ - h） / 2） + 「px」）に更新する。
     frame.style.left = (width - w) / 2 + 'px'; frame.style.top = (height - h) / 2 + 'px';
+    // layoutの実行時、フレームの外観のtransformを条件「rotated」に応じて（（「rotate(」 + 条件「modeが「left」と等しい」に応じて90の符号反転値または90） + 「deg)」）または「効果なしマス」に更新する。
     frame.style.transform = rotated ? 'rotate(' + (mode === 'left' ? -90 : 90) + 'deg)' : 'none';
+    // layoutの実行時、documentのgetElementByIdの結果（「display-state」）のtextContentを条件「rotated」に応じて条件「modeが「left」と等しい」に応じて「左回転」または「右回転」または「通常表示」に更新する。
     document.getElementById('display-state').textContent = rotated ? (mode === 'left' ? '左回転' : '右回転') : '通常表示';
+    // layoutの実行時、menuのquerySelectorAllの結果（「[data-mode]」）の各項目について、ボタンのsetAttributeを実行する。渡す値は「aria-pressed」・Stringの結果（ボタンのdatasetのmodeがmodeと等しい）。
     for (const button of menu.querySelectorAll('[data-mode]')) button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
+  // layoutの実行時で使う処理範囲をここで閉じる。
   }
+  // Web画面の起動・操作時、toggleのonclickを引数 を使う処理に更新する。
   toggle.onclick = () => { menu.hidden = !menu.hidden; toggle.setAttribute('aria-expanded', String(!menu.hidden)); if (!menu.hidden) menu.querySelector('[aria-pressed="true"]').focus(); };
+  // Web画面の起動・操作時、documentのgetElementByIdの結果（「display-close」）のonclickを引数 を使う処理に更新する。
   document.getElementById('display-close').onclick = () => { closeMenu(); toggle.focus(); };
+  // Web画面の起動・操作時、menuのquerySelectorAllの結果（「[data-mode]」）の各項目について、ボタンのonclickを引数 を使う処理に更新する。
   for (const button of menu.querySelectorAll('[data-mode]')) button.onclick = () => {
+    // Web画面の起動・操作時、modeをボタンのdatasetのmodeに更新する。
     mode = button.dataset.mode;
+    // Web画面の起動・操作時、localStorageのsetItemを実行する。渡す値はstorageKey・mode。
     try { localStorage.setItem(storageKey, mode); } catch (_) {}
+    // Web画面の起動・操作時、layoutを実行する。closeMenuを実行する。toggleのfocusを実行する。
     layout(); closeMenu(); toggle.focus();
+  // inlineで使う処理範囲をここで閉じる。
   };
+  // Web画面の起動・操作時、documentのaddEventListenerを実行する。渡す値は「keydown」・引数 イベント を使う処理。
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) { closeMenu(); toggle.focus(); event.preventDefault(); } });
+  // Web画面の起動・操作時、addEventListenerを実行する。渡す値は「resize」・画面配置。
   addEventListener('resize', layout);
+  // Web画面の起動・操作時、coarseのaddEventListenerを実行する。渡す値は「変更の鍵」・画面配置。
   coarse.addEventListener('change', layout);
+  // Web画面の起動・操作時、ResizeObserverの新しいインスタンスのobserveを実行する。渡す値はstage。
   new ResizeObserver(layout).observe(stage);
+  // Web画面の起動・操作時、layoutを実行する。
   layout();
+// Web画面の起動・操作時、}())。
 }());
+// ページに組み込むスクリプトの定義をここで終える。
 </script>
+<!-- body 要素の内容をここで閉じる。 -->
 </body>
+<!-- html 要素の内容をここで閉じる。 -->
 </html>
 

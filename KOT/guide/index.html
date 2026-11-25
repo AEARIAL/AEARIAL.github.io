@@ -1,55 +1,110 @@
+<!-- ブラウザーがHTML標準モードでページを描画できるようにする。 -->
 <!doctype html>
+<!-- ページを組み立てるとき、html 要素を配置する。 -->
 <html lang="ja">
+<!-- ページを組み立てるとき、head 要素を配置する。 -->
 <head>
+  <!-- ブラウザーに utf-8 の設定を伝える。 -->
   <meta charset="utf-8">
+  <!-- ブラウザーに viewport の設定を伝える。 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ブラウザーに theme-color の設定を伝える。 -->
   <meta name="theme-color" content="#0b1523">
-  <meta name="description" content="Key Or Trapの遊び方。ゲーム内と同じ一言と大きな画面画像で、勝利条件から鍵・罠の予約、手番とタロットまで確認できます。">
+  <!-- ブラウザーに description の設定を伝える。 -->
+  <meta name="description" content="Key Or Trapの遊び方。ゲーム内と同じ一言と大きな画面画像で、勝利条件から鍵・罠の予約、手番と祈りの祭壇マスまで確認できます。">
+  <!-- 「遊び方 | Key Or Trap」を表示するため、title 要素を配置する。 -->
   <title>遊び方 | Key Or Trap</title>
+  <!-- ページを組み立てるとき、link 要素を配置する。 -->
   <link rel="stylesheet" href="guide.css">
+  <!-- このページの操作に必要なスクリプトを読み込む。 -->
   <script src="guide.js" defer></script>
+<!-- head 要素の内容をここで閉じる。 -->
 </head>
+<!-- ページを組み立てるとき、body 要素を配置する。 -->
 <body>
+  <!-- ページを組み立てるとき、a 要素を配置する。 -->
   <a class="skip" href="#main">ガイド本文へ</a>
+  <!-- ページを組み立てるとき、header 要素を配置する。 -->
   <header class="site-header">
+    <!-- ページを組み立てるとき、a 要素を配置する。 -->
     <a class="brand" href="../../" aria-label="AEARIALのトップへ">
+      <!-- ページを組み立てるとき、svg 要素を配置する。 -->
       <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="16"/><path d="M24 7v4m17 13h-4M24 41v-4M7 24h4m13-10v10l9 6"/><circle cx="24" cy="24" r="2"/></svg>
+      <!-- ページを組み立てるとき、span 要素を配置する。 -->
       <span>KEY OR TRAP<small>夜の盤面を、読み解く。</small></span>
+    <!-- a 要素の内容をここで閉じる。 -->
     </a>
+    <!-- ページを組み立てるとき、a 要素を配置する。 -->
     <a class="play" href="../" target="_blank" rel="noopener">ゲームを開く <span aria-hidden="true">↗</span></a>
+  <!-- header 要素の内容をここで閉じる。 -->
   </header>
+  <!-- ページを組み立てるとき、div 要素を配置する。 -->
   <div class="layout">
+    <!-- ページを組み立てるとき、aside 要素を配置する。 -->
     <aside class="sidebar">
+      <!-- ページを組み立てるとき、p 要素を配置する。 -->
       <p class="eyebrow">PLAY GUIDE</p>
+      <!-- 「はじめてのガイド」を表示するため、h1 要素を配置する。 -->
       <h1>はじめてのガイド</h1>
+      <!-- ページを組み立てるとき、p 要素を配置する。 -->
       <p class="intro">一言と画面で、操作をひとつずつ。</p>
+      <!-- 「chapters」の表示領域として、nav 要素を配置する。 -->
       <nav id="chapters" aria-label="ガイドの章"></nav>
+      <!-- ページを組み立てるとき、div 要素を配置する。 -->
       <div class="side-note"><span class="note-line"></span>ゲーム内の「遊び方」と同じ内容です。<br>気になる章から読めます。</div>
+    <!-- aside 要素の内容をここで閉じる。 -->
     </aside>
+    <!-- 「main」の表示領域として、main 要素を配置する。 -->
     <main id="main" tabindex="-1">
+      <!-- 「loading」の表示領域として、div 要素を配置する。 -->
       <div id="loading" role="status">ガイドを読み込んでいます。</div>
+      <!-- 「reader」の表示領域として、div 要素を配置する。 -->
       <div id="reader" hidden>
+        <!-- 「chapter-number」の表示領域として、div 要素を配置する。 -->
         <div class="chapter-heading"><p id="chapter-number" class="eyebrow"></p><span id="step-count"></span></div>
+        <!-- 「chapter-title」の表示領域として、h2 要素を配置する。 -->
         <h2 id="chapter-title"></h2>
+        <!-- 「tarot-note」の表示領域として、p 要素を配置する。 -->
         <p id="tarot-note" class="tarot-note" hidden>儀式のシンボル解放後の追加ルールです。解放前は基本ガイドだけで遊べます。</p>
+        <!-- 「steps」の表示領域として、nav 要素を配置する。 -->
         <nav id="steps" aria-label="この章の手順"></nav>
+        <!-- 「caption」の表示領域として、div 要素を配置する。 -->
         <div class="caption-row"><h3 id="caption" aria-live="polite"></h3><span class="focus-key"><i></i>注目するところ</span></div>
+        <!-- ページ表示時に画像と対応する説明を並べる。 -->
         <figure class="visual">
+          <!-- 「scene」の表示領域として、svg 要素を配置する。 -->
           <svg id="scene" role="img" aria-labelledby="scene-title scene-description" preserveAspectRatio="xMidYMid meet">
+            <!-- 「scene-title」の表示領域として、title 要素を配置する。 -->
             <title id="scene-title"></title><desc id="scene-description"></desc>
+            <!-- 「picture」の表示領域として、image 要素を配置する。 -->
             <image id="picture" x="0" y="0"/>
+            <!-- 「highlight」の表示領域として、rect 要素を配置する。 -->
             <rect id="highlight" fill="none" vector-effect="non-scaling-stroke"/>
+          <!-- svg 要素の内容をここで閉じる。 -->
           </svg>
+          <!-- 「view-mode」の表示領域として、figcaption 要素を配置する。 -->
           <figcaption class="image-tools"><span>実際のゲーム画面</span><div><button id="view-mode" type="button" aria-pressed="false">画面全体を見る</button><button id="enlarge" type="button">画像を拡大</button></div></figcaption>
+        <!-- figure 要素の内容をここで閉じる。 -->
         </figure>
+        <!-- 「previous」の表示領域として、div 要素を配置する。 -->
         <div class="paging"><button id="previous" type="button">前へ</button><p id="progress" aria-live="polite"></p><button id="next" type="button" class="primary">次へ</button></div>
+        <!-- 「details」の表示領域として、details 要素を配置する。 -->
         <details id="details"><summary>詳しいルールを読む <span>条件・費用・例外</span></summary><div id="rules"></div></details>
+        <!-- 「まずは、盤面に触れてみよう。」を表示するため、section 要素を配置する。 -->
         <section id="complete" class="complete" hidden><p class="eyebrow">READY TO PLAY</p><h3>まずは、盤面に触れてみよう。</h3><p>ゲームを開き、シングルプレイかマルチプレイで対戦を始められます。</p><a class="play" href="../" target="_blank" rel="noopener">ゲームを開く ↗</a></section>
+      <!-- div 要素の内容をここで閉じる。 -->
       </div>
+      <!-- ページを組み立てるとき、noscript 要素を配置する。 -->
       <noscript>このガイドの手順切替にはJavaScriptが必要です。ゲーム内メニューの「遊び方」からも同じガイドを読めます。</noscript>
+    <!-- main 要素の内容をここで閉じる。 -->
     </main>
+  <!-- div 要素の内容をここで閉じる。 -->
   </div>
+  <!-- ページを組み立てるとき、footer 要素を配置する。 -->
   <footer><span>KEY OR TRAP</span><a href="assets/OFL.txt">フォントライセンス</a><a href="../../">AEARIALのトップへ</a></footer>
+  <!-- 「image-dialog」の表示領域として、dialog 要素を配置する。 -->
   <dialog id="image-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><h2 id="dialog-title">画面を拡大</h2><button id="close-dialog" type="button" autofocus>閉じる（Esc）</button></div><div id="zoom-host"></div><p>横幅に合わせて表示しています。必要に応じてスクロールできます。</p></dialog>
+<!-- body 要素の内容をここで閉じる。 -->
 </body>
+<!-- html 要素の内容をここで閉じる。 -->
 </html>
