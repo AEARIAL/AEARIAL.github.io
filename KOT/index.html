@@ -55,8 +55,8 @@
   /* ここまでのスタイルを使ってページ本文を描画する。 */
   </style>
   <!-- Webエクスポート時にGodotが生成する内容をこの位置に展開する。 -->
-  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-8353391.icon.png" />
-<link rel="apple-touch-icon" href="kot-8353391.apple-touch-icon.png"/>
+  <link id="-gd-engine-icon" rel="icon" type="image/png" href="kot-860ca4e.icon.png" />
+<link rel="apple-touch-icon" href="kot-860ca4e.apple-touch-icon.png"/>
 
 <!-- head 要素の内容をここで閉じる。 -->
 </head>
@@ -140,14 +140,14 @@
     // Godot keeps its normal canvas, 1080p viewport and coordinate calculations.
     // Web画面の起動・操作時、scriptにdocumentのcreateElementの結果（「script」）を保持する。
     const script = document.createElement('script');
-    // Web画面の起動・操作時、scriptの取得元を「kot-8353391.js」に更新する。
-    script.src = 'kot-8353391.js';
+    // Web画面の起動・操作時、scriptの取得元を「kot-860ca4e.js」に更新する。
+    script.src = 'kot-860ca4e.js';
     // Web画面の起動・操作時、scriptのonerrorを引数 を使う処理に更新する。
     script.onerror = () => fail('ゲームを読み込めませんでした。通信状況を確認して再読み込みしてください。');
     // Web画面の起動・操作時、scriptのonloadを引数 を使う処理に更新する。
     script.onload = () => {
-      // Web画面の起動・操作時、設定に{"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-8353391","experimentalVK":true,"fileSizes":{"kot-8353391.pck":149120280,"kot-8353391.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4}を保持する。
-      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-8353391","experimentalVK":true,"fileSizes":{"kot-8353391.pck":149120280,"kot-8353391.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      // Web画面の起動・操作時、設定に{"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-860ca4e","experimentalVK":true,"fileSizes":{"kot-860ca4e.pck":149046136,"kot-860ca4e.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4}を保持する。
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"kot-860ca4e","experimentalVK":true,"fileSizes":{"kot-860ca4e.pck":149046136,"kot-860ca4e.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
       // Web画面の起動・操作時、消失中にEngineのgetMissingFeaturesの結果（項目（threads）を持つデータ）を保持する。
       const missing = Engine.getMissingFeatures({threads: false});
       // Web画面の起動・操作時、条件「消失中の要素数」のとき、以下の処理に進む。
@@ -155,7 +155,7 @@
       // Web画面の起動・操作時、ローカルのゲーム処理にEngineの新しいインスタンスを保持する。
       const engine = new Engine(config);
       // Web画面の起動・操作時、packPartsに値なしを保持する。
-      const packParts = {"bytes":149120280,"sha256":"0a439eb19edec60cd7628ff352fe19bb23635384a20423080faf77a97ac87079","files":[{"name":"kot-8353391.pck.part0","bytes":50331648,"sha256":"6b64ee637251ab12bf694c621f694e3d988c159fa0a04408afe967783801ec52"},{"name":"kot-8353391.pck.part1","bytes":50331648,"sha256":"887aa453dec08f7a28040796766ab40803984445a84ca5783b3f7afc8c3a3437"},{"name":"kot-8353391.pck.part2","bytes":48456984,"sha256":"8ec02589394a012b2ec063f7cd394a83ce4ba5941ecfa9843bba1aa883f344cc"}]}; // KOT_PACK_PARTS
+      const packParts = {"bytes":149046136,"sha256":"fc0fdce4c05c7596bb052da74cef77013f9414a9a4ce37a64856a88d0edc5747","files":[{"name":"kot-860ca4e.pck.part0","bytes":50331648,"sha256":"0ccfd4ebb8006290ceec85dfc33da17ae98a83c9aab54cbbde19e75078351a0a"},{"name":"kot-860ca4e.pck.part1","bytes":50331648,"sha256":"f4857b0ef9e5f217bcd31e96fbdb882e135cdb35d83da82de280580b697d2ef8"},{"name":"kot-860ca4e.pck.part2","bytes":48382840,"sha256":"de2d39e6da3b1fb9ba6d7fa3b670cb25bd5104f34f27e0d4f297a58d64e00fae"}]}; // KOT_PACK_PARTS
       // Web画面の起動・操作時、startPackedGameの結果（ローカルのゲーム処理・設定・packParts・引数 現在・合計 を使う処理）のthenを実行する。渡す値は引数 を使う処理・fail。
       startPackedGame(engine, config, packParts, (current, total) => {
         // Web画面の起動・操作時、progressにdocumentのgetElementByIdの結果（「progress」）を保持する。

@@ -1,0 +1,21 @@
+{
+  "bytes": 149046136,
+  "sha256": "fc0fdce4c05c7596bb052da74cef77013f9414a9a4ce37a64856a88d0edc5747",
+  "files": [
+    {
+      "name": "kot-860ca4e.pck.part0",
+      "bytes": 50331648,
+      "sha256": "0ccfd4ebb8006290ceec85dfc33da17ae98a83c9aab54cbbde19e75078351a0a"
+    },
+    {
+      "name": "kot-860ca4e.pck.part1",
+      "bytes": 50331648,
+      "sha256": "f4857b0ef9e5f217bcd31e96fbdb882e135cdb35d83da82de280580b697d2ef8"
+    },
+    {
+      "name": "kot-860ca4e.pck.part2",
+      "bytes": 48382840,
+      "sha256": "de2d39e6da3b1fb9ba6d7fa3b670cb25bd5104f34f27e0d4f297a58d64e00fae"
+    }
+  ]
+}
